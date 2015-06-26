@@ -26,7 +26,8 @@
 
 		// register the Google font Fjalla
 		wp_register_style('fjalla', 'http://fonts.googleapis.com/css?family=Average|Fjalla+One');
-		wp_register_style('custom-style', get_template_directory_uri() . '/styles/style.css', array('fjalla'), '1');
+		wp_register_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '1');
+		wp_register_style('custom-style', get_template_directory_uri() . '/styles/style.css', array('fjalla','font-awesome'), '1');
 
 		// register jQuery with CDN
 		wp_deregister_script( 'jquery' );
@@ -38,7 +39,7 @@
 	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well. 
 	    wp_enqueue_script( 'custom-script' );
 
-	    // Enqueue Fjalla font
+	    // Enqueue custom styles
 	    wp_enqueue_style('custom-style');
 	}
 

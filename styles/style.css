@@ -18,6 +18,20 @@
   justify-content: space-around;
   -ms-flex-pack: space-around; }
 
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0; }
+
+.main-three svg {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
 /* mixins */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
@@ -1506,6 +1520,9 @@ h2 {
 h3 {
   font-size: 3rem; }
 
+nav {
+  margin-bottom: 1.5rem; }
+
 .logo-holder {
   width: 250px;
   height: auto;
@@ -1519,7 +1536,8 @@ h3 {
       fill: #35409A; }
 
 .nav-links-holder {
-  background: #eeeeee;
+  border-bottom: 3px dashed rgba(86, 12, 15, 0.5);
+  border-top: 3px dashed rgba(86, 12, 15, 0.5);
   padding: 15px 0; }
 
 .nav-links {
@@ -1529,15 +1547,25 @@ h3 {
   .nav-links li {
     display: inline-block; }
     .nav-links li a {
-      color: black; }
+      color: #560c0f; }
+
+.background {
+  background: rgba(0, 0, 0, 0.5); }
+
+.hero-banner-container, .main-three-holder {
+  z-index: 1;
+  position: relative;
+  margin-bottom: 3rem; }
 
 .hero-banner {
   width: 100%;
   height: 500px;
+  padding: 3rem 0;
   background: url("http://macarthur.dev/lyoncountyrepublicans/wp-content/themes/lyoncountyrepublicans/img/flag.jpg") no-repeat;
   background-size: cover;
   text-align: center;
-  color: white; }
+  color: white;
+  position: relative; }
 
 .hero-text {
   margin: 0; }
@@ -1545,6 +1573,27 @@ h3 {
 .disclaimer {
   font-style: italic;
   font-size: 2rem; }
+
+.main-three-holder {
+  background: rgba(255, 255, 255, 0.3); }
+
+.main-three svg {
+  width: 100%;
+  max-height: 100px; }
+.main-three h3 {
+  margin: 0; }
+
+.icon-holder {
+  width: 35%;
+  height: 135px;
+  margin: 0 auto; }
+
+.home-container {
+  background: #eeeeee;
+  border-top: 5px solid #560c0f;
+  margin-top: -12rem;
+  position: relative;
+  z-index: 2; }
 
 /* mobile menu styles */
 .mobile-menu-toggle {
