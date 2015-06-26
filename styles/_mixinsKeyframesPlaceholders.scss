@@ -1,0 +1,105 @@
+/* placeholders */
+%display-flex{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+%justify-content-space-around{
+	-webkit-justify-content: space-around;
+	justify-content:space-around;
+	-ms-flex-pack: space-around;
+}
+%justify-content-center{
+	-webkit-justify-content: center;
+	justify-content:center;
+	-ms-flex-pack: center;
+}
+%full-link{
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+	top:0;
+}
+%vertical-align{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+/* mixins */
+@mixin transitionSpeed{
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+@mixin offScreen($value: -250%){
+	-moz-transform: translatey($value);
+	-ms-transform: translatey($value);
+	-o-transform: translatey($value);
+	-webkit-transform: translatey($value);
+	transform: translatey($value);
+}
+@mixin translateX($value:-50%){
+	-webkit-transform: translateX($value);
+	-moz-transform: translateX($value);
+	-ms-transform: translateX($value);
+	transform: translateX($value);
+}
+@mixin translateXY($x, $y){
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+@mixin verticalAlign($top: 50%, $percent: -50%){
+	position: relative;
+	top: $top;
+	-webkit-transform: translateY($percent);
+	-moz-transform: translateY($percent);
+	-ms-transform: translateY($percent);
+	transform: translateY($percent);
+}
+@mixin boxShadow($value1: 0px, $value2: 0px, $value3: 3px, $value4: 0px, $color: rgba($gray, .5)){
+	box-shadow: $value1 $value2 $value3 $value4 $color;
+	-moz-box-shadow: $value1 $value2 $value3 $value4 $color;
+	-webkit-box-shadow: $value1 $value2 $value3 $value4 $color;
+}
+@mixin opacity($opacity:.2){
+	opacity: $opacity;
+	-moz-opacity: $opacity;
+	filter: alpha(opacity=$opacity); /* For IE8 and earlier */
+}
+@mixin blur($bluriness: 5px){
+	-webkit-filter: blur($bluriness);
+	-moz-filter: blur($bluriness);
+	-o-filter: blur($bluriness);
+	-ms-filter: blur($bluriness);
+	filter: blur($bluriness);
+}
+@mixin linearGradientWithBackground($first, $second, $background){
+	background: -webkit-linear-gradient(
+      $first, $second), $background;
+	background: -moz-linear-gradient(
+      $first, $second), $background;
+	background: -o-linear-gradient(
+      $first, $second), $background;
+	background: linear-gradient(
+      $first, $second), $background;
+}
+@mixin linearGradientNoBackground($first, $second){
+	background: -webkit-linear-gradient(
+      $first, $second);
+	background: -moz-linear-gradient(
+      $first, $second);
+	background: -o-linear-gradient(
+      $first, $second);
+	background: linear-gradient(
+      $first, $second);
+}

@@ -1,0 +1,121 @@
+*{
+	font-family: 'Fjalla One', sans-serif;
+}
+html{
+	font-size: 62.5%;
+}
+a{
+	&:hover{
+		text-decoration:none;
+	}
+}
+span,p{
+	font-family: 'Average', serif;
+}
+h1{
+	text-transform:uppercase;
+	font-size: 4rem;
+}
+h2{
+	@extend h1;
+	font-size: 3.5rem;
+}
+h3{
+	@extend h1;
+	font-size: 3rem;
+}
+// top navigation
+.logo-holder{
+	width: 250px;
+  	height: auto;
+  	margin: 0 auto;
+  	padding: 2.5rem 0;
+  	svg{
+  		width:100%;
+  		&:hover{
+  			#the-top{
+  				fill: #DC1F26;
+  			}
+  			#the-bottom{
+  				fill: #35409A;
+  			}
+  		}
+  	}
+}
+.nav-links-holder{
+	background: $gray;
+	padding: 15px 0;
+}
+.nav-links{
+	@extend .container;
+	@extend %display-flex;
+	@extend %justify-content-space-around;
+	text-align:center;
+	font-size: 2.1rem;
+  	text-transform: uppercase;
+	li{
+		display:inline-block;
+		a{
+			color: black;
+		}
+	}
+}
+// hero banner 
+.hero-banner{
+	width:100%;
+	height: 500px;
+	background: url('http://macarthur.dev/lyoncountyrepublicans/wp-content/themes/lyoncountyrepublicans/img/flag.jpg') no-repeat;
+	background-size:cover;
+	text-align:center;
+	color:white;
+}
+.hero-text{
+	margin:0;
+}
+.disclaimer{
+	font-style:italic;
+	font-size: 2rem;
+}
+
+/* mobile menu styles */
+.mobile-menu-toggle{
+	display:none;
+	width: 40px;
+	height: 40px;
+}
+.mobile-nav-links{
+	display:none!important;
+}
+.mobile-menu-toggle{
+	position:absolute;
+	top: 15px;
+	left:15px;
+	z-index: 1;
+	&:hover{
+		cursor:pointer;
+	}
+}
+#close-mobile-menu{
+	display:none;
+	  width: 50px;
+  	height: 50px;
+  	position: absolute;
+  	top: 25px;
+  	left: 25px;
+  	z-index: 1;
+  	&:hover{
+  		cursor:pointer;
+  	}
+	 svg{
+	  	height:100%;
+	  	width:100%;
+	  }
+}
+.open-mobile-menu{
+	-moz-transform: translatey(0)!important;
+	-ms-transform: translatey(0)!important;
+	-o-transform: translatey(0)!important;
+	-webkit-transform: translatey(0)!important;
+	transform: translatey(0)!important;
+}
+
