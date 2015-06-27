@@ -155,11 +155,63 @@ nav{
 	background:white;
 	position:relative;
 	padding: 2.3rem 1.5rem .5rem 1.5rem;
+	margin-bottom: 2.5rem;
 	.more-info{
 		color: $dark-gray;
 		position:absolute;
 		right:5%;
 		bottom: 5%;
+	}
+}
+/* featured official */
+.featured-official{
+	text-align:center;
+	margin-bottom: 4.5rem;
+}
+.official-image{
+	height: 200px;
+	width: 200px;
+	border-radius:100%;
+	margin:0 auto;
+}
+.official-details{
+	span{
+		font-family: 'Average', serif;
+  		font-size: 2.1rem;
+		display:block;
+	}
+}
+.official-title{
+	margin-bottom: .5rem;
+}
+.official-name{
+	margin: 1rem 0 0rem;
+}
+/* get involved box */
+.get-involved-section{
+	padding: 1.5rem 0;
+	background: $red;
+	text-align:center;
+	span{
+		color:white;
+		font-size: 2.2rem;
+	}
+	a{
+		color:$red;
+		background:white;
+		width: 70%;
+		margin: 0 auto;
+		display:block;
+		padding: 1.5rem 2rem;
+		font-size: 1.8rem;
+  		text-transform: uppercase;
+	}
+}
+.get-involved-image{
+	width: 50%;
+	margin: 1.5rem auto 1.5rem auto;
+	svg{
+		width:100%;
 	}
 }
 /* upcoming events styles */
@@ -198,6 +250,16 @@ nav{
  			margin: 0;
  		}
 	}
+}
+/* footer styles */
+footer{
+	background: $red;
+}
+.copyright{
+	display:block;
+	width:100%;
+	text-align:center;
+	color:white;
 }
 
 

@@ -95,8 +95,12 @@
 
 			<h2 class="section-title">Featured Official</h2>
 			<div class="sidebar-section">
-				<?php get_template_part('includes/snippet', 'upcoming-events'); ?>
-				<a class="more-info" href="#">See All Events</a>
+				<?php get_template_part('includes/snippet', 'featured-official'); ?>
+				<a class="more-info" href="#">See Who Else We Support</a>
+			</div>
+
+			<div class="sidebar-section get-involved-section">
+				<?php get_template_part('includes/snippet', 'get-involved'); ?>
 			</div>
 		</div>	
 	</div>
