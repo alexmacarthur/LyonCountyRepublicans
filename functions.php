@@ -12,6 +12,8 @@
 	// hide the admin bar on all pages
 	add_filter('show_admin_bar', '__return_false');
 
+	add_theme_support( 'post-thumbnails' ); 
+
 	/* removes widgets on dashboard */
 	function remove_dashboard_meta() {
         //remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
@@ -71,8 +73,108 @@
 	<?php }
 	add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
+	add_action('init', 'register_menu');
 	function register_menu() {
 		register_nav_menu('primary-menu', __('Primary Menu'));
 	}
-	add_action('init', 'register_menu');
+
+	add_action( 'init', 'create_post_type' );
+	function create_post_type() {
+	  register_post_type( 'official',
+	    array(
+	      'labels' => array(
+			    'name'               => _x( 'Officials', 'post type general name' ),
+			    'singular_name'      => _x( 'Official', 'post type singular name' ),
+			    'add_new'            => _x( 'Add New', 'Official' ),
+			    'add_new_item'       => __( 'Add New Official' ),
+			    'edit_item'          => __( 'Edit Official' ),
+			    'new_item'           => __( 'New Official' ),
+			    'all_items'          => __( 'All Official' ),
+			    'view_item'          => __( 'View Official' ),
+			    'search_items'       => __( 'Search Officials' ),
+			    'not_found'          => __( 'No official found' ),
+			    'not_found_in_trash' => __( 'No official found in the trash' ), 
+			    'parent_item_colon'  => '',
+			    'menu_name'          => 'Officials'
+	      ),
+	      	'public' => true,
+	      	'has_archive' => true,
+	      	'menu_position' => 5,
+	    	'supports'      => array('')
+	    )
+	  );
+	}
+
+	add_filter('manage_official_posts_columns' , 'official_cpt_columns');
+	function official_cpt_columns($columns) {
+	
+		unset(
+			$columns['title'],
+			$columns['date']
+		);
+
+		$new_columns = array(
+			'first_name' => __('First Name', 'ThemeName'),
+			'last_name' => __('Last Name', 'ThemeName'),
+			'title_position' => __('Title/Position', 'ThemeName'),
+			'district' => __('District', 'ThemeName'),
+		);
+
+	    return array_merge($columns, $new_columns);
+	}
+
+	add_action( 'manage_official_posts_custom_column', 'my_manage_official_columns', 10, 2 );
+
+	function my_manage_official_columns( $column, $post_id ) {
+
+		global $post;
+
+		switch( $column ) {
+
+			case 'first_name' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('first_name', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			case 'last_name' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('last_name', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			case 'title_position' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('title', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			case 'district' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('district', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			/* Just break out of the switch statement for everything else. */
+			default :
+				break;
+		}
+	}
+
 ?>
