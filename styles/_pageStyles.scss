@@ -1,4 +1,19 @@
 .page-container{
+	.row{
+		margin:0;
+	}
+	.horizontal-line-holder{
+		text-align:center;
+		margin-bottom: 1rem;
+	}
+}
+.page-title{
+	text-align:center;
+	margin: 0 0 0 0;
+}
+.page-content{
+  	padding: 2rem 3rem;
+	background: white;
 	img{
 		margin: 2rem;
 	}
@@ -11,15 +26,7 @@
 	p{
 		margin-top:0;
 	}
-	.row{
-		margin:0;
-	}
 }
-.page-content{
-  	padding: 1rem 2rem;
-	background: white;
-}
-
 /* wordpress styles */
 .alignleft{
 	float:left;

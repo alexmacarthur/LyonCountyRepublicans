@@ -13,20 +13,26 @@
 
 	    <div class="container main-container page-container">
 
+	    	<div class="horizontal-line-holder">
+	    		<h1 class="page-title horizontal-line-value"><?php the_title(); ?></h1>
+	    	</div>
+
 	 		<div class="row">
-	 			<div class="col-md-9 page-content">
+	 			<div class="col-md-12 page-content">
 	 					
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
 	 			</div>
+	 			<!--
 	 			<div class="col-md-3 sidebar-content">
 	 				
-	 			<div class="sidebar-section get-involved-section">
-					<?php get_template_part('includes/snippet', 'get-involved'); ?>
-				</div>
+		 			<div class="sidebar-section get-involved-section">
+						<?php // get_template_part('includes/snippet', 'get-involved'); ?>
+					</div>
 
 	 			</div>
+	 			-->
 	 		</div>
 
 		</div>
