@@ -1,16 +1,19 @@
 *{
-	font-family: 'Fjalla One', sans-serif;
+	@extend %fjalla;
 }
 html{
 	font-size: 62.5%;
+}
+body{
+	background: $gray;
 }
 a{
 	&:hover{
 		text-decoration:none;
 	}
 }
-span,p{
-	font-family: 'Average', serif;
+span,p,a{
+	@extend %average;
 	font-size: 1.7rem;
   	line-height: 2.1rem;
 }
@@ -27,7 +30,7 @@ h3{
 	font-size: 3rem;
 }
 nav{
-
+	background:white;
 }
 // top navigation
 .logo-holder{
@@ -48,9 +51,6 @@ nav{
   	}
 }
 .nav-links-holder{
-	//@include linearGradientWithBackground(transparent, rgba(black, .2), $gray);
-	//background: $gray;
-	//border-bottom: 3px dashed rgba($red, .5);
 	border-top: 3px dashed rgba($red, .5);
 	padding: 15px 0;
 }
@@ -64,7 +64,9 @@ nav{
 	li{
 		display:inline-block;
 		a{
+			@extend %fjalla;
 			color: $red;
+			font-size: 2.2rem;
 		}
 	}
 }
@@ -86,7 +88,12 @@ nav{
 	background-size:cover;
 	text-align:center;
 	color:white;
-	position:relative;
+	position:absolute;
+}
+.hero-content-holder{
+	padding: 3rem 0;
+	text-align:center;
+	color:white;
 }
 .hero-text{
 	margin:0;
@@ -114,15 +121,20 @@ nav{
 	margin: 0 auto;
 }
 // home main content
-.home-container{
-	background: $gray;
+.main-container{
+	@include boxShadow(0px, 0px, 1px, 2px, rgba($dark-gray, .1));
+	background: $light-gray;
 	border-top: 5px solid $red;
-	margin-top: -12rem;
+	margin-top: 0;
   	position: relative;
  	z-index: 2;
  	padding: 1.5rem;
+	&.page-container{
+		margin-top: 5rem;
+	}
 }
 .post-box{
+	@include boxShadow(0px, 0px, 1px, 1px, rgba($dark-gray, .01));
 	h2{
 		margin:0;
 	}
@@ -176,7 +188,7 @@ nav{
 }
 .official-details{
 	span{
-		font-family: 'Average', serif;
+		@extend %average;
   		font-size: 2.1rem;
 		display:block;
 	}
@@ -235,11 +247,11 @@ nav{
 	display:block;
 	width:100%;
 	font-size: 3.5rem;
-	font-family: 'Fjalla One', sans-serif;
+	@extend %fjalla;
 }
 .month-only{
 	text-transform:uppercase;
-	font-family: 'Fjalla One', sans-serif;
+	@extend %fjalla;
 }
 .event-details{
 	a{
@@ -254,12 +266,23 @@ nav{
 /* footer styles */
 footer{
 	background: $red;
+	padding: 2rem;
+	  margin-top: 3rem;
+	a{
+		@extend %average;
+		font-weight:bold;
+		color:white;
+		&:hover{
+			color:white;
+		}
+	}
 }
 .copyright{
 	display:block;
 	width:100%;
 	text-align:center;
 	color:white;
+	font-size: 1.5rem;
 }
 
 

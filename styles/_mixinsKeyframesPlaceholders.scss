@@ -31,7 +31,12 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
-
+%average{
+	font-family: 'Average', serif;
+}
+%fjalla{
+	font-family: 'Fjalla One', sans-serif;
+}
 /* mixins */
 @mixin transitionSpeed{
 	-webkit-transition: all .1s ease-in-out;

@@ -7,7 +7,8 @@
 
 <?php get_header()?>
 
-	<div class="hero-banner">
+
+	<div class="hero-content-holder">
 
 		<div class="container hero-banner-container">
 			<h1 class="hero-text">Welcome to the Growth &amp; Opportunity Party</h1>
@@ -46,13 +47,11 @@
 
 		</div>
 
-		<div class="background"></div>
-
 	</div>
 
-	<div class="container home-container">
+	<div class="container main-container">
 
-		<div class="col-md-8 page-content post-roll">
+		<div class="col-md-8 post-roll">
 			<h2 class="section-title">Latest News</h2>
 				<?php while ( have_posts() ) : the_post() ?>		
 
@@ -103,6 +102,7 @@
 				<?php get_template_part('includes/snippet', 'get-involved'); ?>
 			</div>
 		</div>	
+
 	</div>
 
 <?php get_footer(); ?>

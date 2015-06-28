@@ -32,6 +32,12 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
+span, p, a, .official-details span, footer a {
+  font-family: 'Average', serif; }
+
+*, .nav-links li a, .date-only, .month-only {
+  font-family: 'Fjalla One', sans-serif; }
+
 /* mixins */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
@@ -1498,17 +1504,16 @@ textarea.input-lg, select[multiple].input-lg {
 .affix {
   position: fixed; }
 
-* {
-  font-family: 'Fjalla One', sans-serif; }
-
 html {
   font-size: 62.5%; }
+
+body {
+  background: #eeeeee; }
 
 a:hover {
   text-decoration: none; }
 
-span, p {
-  font-family: 'Average', serif;
+span, p, a {
   font-size: 1.7rem;
   line-height: 2.1rem; }
 
@@ -1521,6 +1526,9 @@ h2 {
 
 h3 {
   font-size: 3rem; }
+
+nav {
+  background: white; }
 
 .logo-holder {
   width: 250px;
@@ -1545,7 +1553,8 @@ h3 {
   .nav-links li {
     display: inline-block; }
     .nav-links li a {
-      color: #560c0f; }
+      color: #560c0f;
+      font-size: 2.2rem; }
 
 .background {
   background: rgba(0, 0, 0, 0.5); }
@@ -1563,7 +1572,12 @@ h3 {
   background-size: cover;
   text-align: center;
   color: white;
-  position: relative; }
+  position: absolute; }
+
+.hero-content-holder {
+  padding: 3rem 0;
+  text-align: center;
+  color: white; }
 
 .hero-text {
   margin: 0; }
@@ -1586,16 +1600,25 @@ h3 {
   height: 135px;
   margin: 0 auto; }
 
-.home-container {
-  background: #eeeeee;
+.main-container {
+  box-shadow: 0px 0px 1px 2px rgba(51, 51, 51, 0.1);
+  -moz-box-shadow: 0px 0px 1px 2px rgba(51, 51, 51, 0.1);
+  -webkit-box-shadow: 0px 0px 1px 2px rgba(51, 51, 51, 0.1);
+  background: #f7f7f7;
   border-top: 5px solid #560c0f;
-  margin-top: -12rem;
+  margin-top: 0;
   position: relative;
   z-index: 2;
   padding: 1.5rem; }
+  .main-container.page-container {
+    margin-top: 5rem; }
 
-.post-box h2 {
-  margin: 0; }
+.post-box {
+  box-shadow: 0px 0px 1px 1px rgba(51, 51, 51, 0.01);
+  -moz-box-shadow: 0px 0px 1px 1px rgba(51, 51, 51, 0.01);
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(51, 51, 51, 0.01); }
+  .post-box h2 {
+    margin: 0; }
 
 .section-title {
   font-size: 2.5rem;
@@ -1643,7 +1666,6 @@ h3 {
   margin: 0 auto; }
 
 .official-details span {
-  font-family: 'Average', serif;
   font-size: 2.1rem;
   display: block; }
 
@@ -1695,12 +1717,10 @@ h3 {
 .date-only {
   display: block;
   width: 100%;
-  font-size: 3.5rem;
-  font-family: 'Fjalla One', sans-serif; }
+  font-size: 3.5rem; }
 
 .month-only {
-  text-transform: uppercase;
-  font-family: 'Fjalla One', sans-serif; }
+  text-transform: uppercase; }
 
 .event-details a {
   color: #333;
@@ -1711,13 +1731,21 @@ h3 {
 
 /* footer styles */
 footer {
-  background: #560c0f; }
+  background: #560c0f;
+  padding: 2rem;
+  margin-top: 3rem; }
+  footer a {
+    font-weight: bold;
+    color: white; }
+    footer a:hover {
+      color: white; }
 
 .copyright {
   display: block;
   width: 100%;
   text-align: center;
-  color: white; }
+  color: white;
+  font-size: 1.5rem; }
 
 /* mobile menu styles */
 .mobile-menu-toggle {
@@ -1754,5 +1782,27 @@ footer {
   -ms-transform: translatey(0) !important;
   -webkit-transform: translatey(0) !important;
   transform: translatey(0) !important; }
+
+.page-container img {
+  margin: 2rem; }
+.page-container h1, .page-container h2, .page-container h3, .page-container h2, .page-container h3, .page-container h4, .page-container h5, .page-container h6 {
+  margin: 0; }
+.page-container a {
+  color: #560c0f; }
+.page-container p {
+  margin-top: 0; }
+.page-container .row {
+  margin: 0; }
+
+.page-content {
+  padding: 1rem 2rem;
+  background: white; }
+
+/* wordpress styles */
+.alignleft {
+  float: left; }
+
+.alignright {
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */

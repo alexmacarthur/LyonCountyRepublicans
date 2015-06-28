@@ -1,0 +1,29 @@
+.page-container{
+	img{
+		margin: 2rem;
+	}
+	h1,h2,h3,h4,h5,h6{
+		margin:0;
+	}
+	a{
+		color: $red;
+	}
+	p{
+		margin-top:0;
+	}
+	.row{
+		margin:0;
+	}
+}
+.page-content{
+  	padding: 1rem 2rem;
+	background: white;
+}
+
+/* wordpress styles */
+.alignleft{
+	float:left;
+}
+.alignright{
+	float:right;
+}
