@@ -20,7 +20,7 @@
 
           </div>
           <div class="official-details">
-              <h3 class="official-name"><?php echo get_field('first_name', $postID); ?></h3>
+              <h3 class="official-name"><?php echo get_field('first_name', $postID) . ' ' . get_field('last_name', $postID); ?></h3>
               <span class="official-title"><?php echo get_field('title', $postID); ?></span>
               <?php if(get_field('district', $postID)): ?>
                 <span class="official-district"><?php echo get_field('district', $postID); ?></span>

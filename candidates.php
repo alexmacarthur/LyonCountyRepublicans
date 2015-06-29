@@ -16,47 +16,55 @@
 	    	</div>
 
 	 		<div class="row">
-	 			<div class="col-md-12 page-content">
+	 			<div class="col-md-12 page-content">.
 
-	 			<?php 
-				  $args = array(
-				      	'post_type' => 'official',
-				      	'meta_key'	=> 'first_name',
-						'orderby'	=> 'meta_value_num',
-						'order'		=> 'DESC'
-				    );
+	 				<div class="row">
 
-				  $officials = get_posts($args);
+		 			<?php 
+					  $args = array(
+					      	'post_type' => 'official',
+					      	'posts_per_page' => -1,
+					      	'meta_key'			=> 'last_name',
+							'orderby'			=> 'meta_value_num',
+							'order'				=> 'ASC'
+					    );
 
-				  if($officials){
-				    foreach ($officials as $official){
+					  $officialsPage = get_posts($args);
 
-				      $postID = $official->ID;
-				      ?>
+					  if($officialsPage){
+					    foreach ($officialsPage as $official){
 
-				        <div class="featured-official">
+					      $postID = $official->ID;
+					      ?>
 
-				          <div class="official-image" style="background:url('<?php echo get_field('picture', $postID); ?>'); background-position: 50% 10%; background-size:cover;">
+					        <div class="col-md-4 featured-official">
 
-				          </div>
-				          <div class="official-details">
-				              <h3 class="official-name"><?php echo get_field('first_name', $postID); ?></h3>
-				              <span class="official-title"><?php echo get_field('title', $postID); ?></span>
-				              <?php if(get_field('district', $postID)): ?>
-				                <span class="official-district"><?php echo get_field('district', $postID); ?></span>
-				              <?php endif; ?>
-				          </div>
+					          <div class="official-image" style="background:url('<?php echo get_field('picture', $postID); ?>'); background-position: 50% 10%; background-size:cover;">
 
-				        </div>
+					          </div>
+					          <div class="official-details">
+					              <h3 class="official-name"><?php echo get_field('first_name', $postID) . ' ' . get_field('last_name', $postID); ?></h3>
+					              <span class="official-title"><?php echo get_field('title', $postID); ?></span>
+					              <?php if(get_field('district', $postID)): ?>
+					                <span class="official-district"><?php echo get_field('district', $postID); ?></span>
+					              <?php endif; ?>
+					              <?php if(get_field('link', $postID)): ?>
+					                <span class="official-link"><a class="official-info" href="<?php echo get_field('link', $postID); ?>">More Info</a></span>
+					              <?php endif; ?>
+					          </div>
 
-				      <?php
+					        </div>
 
-				    }
+					      <?php
 
-				  }
+					    }
+
+					  }
 
 
-				?>
+					?>
+
+					</div>
 	 					
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
