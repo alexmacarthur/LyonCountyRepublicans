@@ -52,8 +52,6 @@
 
 	<div class="hero-banner">
 
-
-
 		<div class="background"></div>
 
 	</div>
