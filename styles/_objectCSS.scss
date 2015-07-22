@@ -1,0 +1,11 @@
+html{
+	a.red-button{
+		background: $red;
+		padding: .5rem 1rem;
+	  	color: white;
+	  	border-radius: 3px;
+	  	&:hover{
+	  		background: $light-red;
+	  	}
+	}
+}

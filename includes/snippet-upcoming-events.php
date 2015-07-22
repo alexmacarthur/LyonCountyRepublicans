@@ -1,14 +1,15 @@
 <?php 
   $args = array(
       'post_type' => 'tribe_events',
-          'meta_key'=>'_EventStartDate',
-  'orderby'=>'_EventStartDate',
-  'order'=>'DESC'
+      'meta_key'=>'_EventStartDate',
+      'orderby'=>'_EventStartDate',
+      'order'=>'DESC'
     );
   $events = get_posts($args);
 
   if($events){
     foreach ($events as $event){
+      $ID = $event->ID;
       $timestamp = strtotime(tribe_get_event_meta( $event->ID, '_EventStartDate', true ));
       $theDate = date('d', $timestamp);
       $theMonth = date('M', $timestamp);
@@ -25,8 +26,8 @@
        </div>
 
        <div class="col-md-8 event-details">
-          
-          <a href="<?php the_permalink(); ?>"><h4 class="event-title"><?php echo get_the_title($event->ID); ?></h4></a>
+
+          <a href="<?php echo get_permalink($ID); ?>"><h4 class="event-title"><?php echo get_the_title($ID); ?></h4></a>
           <span class="event-detail"><?php echo tribe_get_venue($event->ID); ?></span>
           <span class="event-detail"><?php echo tribe_get_start_time($event->ID); ?></span>
           
@@ -38,4 +39,4 @@
     }
   }
 ?>
-   
+

@@ -52,8 +52,8 @@
 	
 	    <style type="text/css">
 	        body.login div#login h1 a {
-	            background-image: url('<?php echo get_template_directory_uri(); ?>/img/LOGO')!important;
-	            padding-bottom: 30px;
+	            background-image: url('<?php echo get_template_directory_uri(); ?>/img/logo.svg')!important;
+	            padding-bottom: 3px;
 				width: 82%;
 				background-size: contain;
 	        }

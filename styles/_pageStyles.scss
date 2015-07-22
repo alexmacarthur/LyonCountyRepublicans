@@ -27,6 +27,15 @@
 		margin-top:0;
 	}
 }
+.horizontal-line-holder{
+	h3{
+		background: white;
+		display: inline;
+		padding: 2rem;
+		z-index: 5;
+		position: relative;
+	}
+}
 /* wordpress styles */
 .alignleft{
 	float:left;

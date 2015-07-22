@@ -1504,6 +1504,14 @@ textarea.input-lg, select[multiple].input-lg {
 .affix {
   position: fixed; }
 
+html a.red-button, html a.tribe-events-gcal, html a.tribe-events-ical {
+  background: #560c0f;
+  padding: .5rem 1rem;
+  color: white;
+  border-radius: 3px; }
+  html a.red-button:hover, html a.tribe-events-gcal:hover, html a.tribe-events-ical:hover {
+    background: #7e1216; }
+
 html {
   font-size: 62.5%; }
 
@@ -1821,11 +1829,67 @@ footer {
   .page-content p {
     margin-top: 0; }
 
+.horizontal-line-holder h3 {
+  background: white;
+  display: inline;
+  padding: 2rem;
+  z-index: 5;
+  position: relative; }
+
 /* wordpress styles */
 .alignleft {
   float: left; }
 
 .alignright {
   float: right; }
+
+#tribe-events-content {
+  margin-bottom: 0; }
+
+.time-details {
+  list-style: none;
+  padding-left: 0; }
+  .time-details li span {
+    font-weight: 800; }
+  .time-details li span, .time-details li p {
+    display: inline; }
+
+.tribe-events-event-meta:first-child {
+  border: none; }
+
+.row.event-details-row {
+  margin-top: 2rem; }
+
+h3.single-event-title, h3.single-event-date {
+  display: inline;
+  margin-right: 1rem; }
+
+.single-event-date {
+  font-size: 1.7rem;
+  line-height: 2.1rem; }
+
+.all-events {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.address-detais span {
+  display: inline; }
+
+.location {
+  margin: 0; }
+
+address {
+  font-style: normal; }
+
+.tribe-events-gmap {
+  position: absolute;
+  right: 0; }
+
+.map-block {
+  margin-top: 1.75rem; }
+
+.tribe-events-gcal, .tribe-events-ical {
+  margin-right: .5rem; }
 
 /*# sourceMappingURL=style.css.map */

@@ -6,9 +6,12 @@ $gray: #eeeeee;
 $dark-gray: #333;
 $light-gray: #f7f7f7;
 $red: #560c0f;
+$light-red: #7e1216;
 
 @import 'mixinsKeyframesPlaceholders';
 @import 'bootstrap';
+@import 'objectCSS';
 @import 'mainstyles';
 @import 'pageStyles';
+@import 'eventsStyles';
 @import 'mediaqueries';
