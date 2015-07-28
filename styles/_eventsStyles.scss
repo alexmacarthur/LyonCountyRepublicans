@@ -54,3 +54,14 @@ address{
 	@extend .red-button;
 	margin-right: .5rem;
 }
+#tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.entry-title{
+	padding: .5rem;
+	font-size: 1.4rem;
+}
+// .tribe-events-has-events{
+// 	background:rgba($red, .15);
+// }
+#tribe-events-content .tribe-events-calendar td, #tribe-events-content table.tribe-events-calendar{
+	border:none;
+	border-top: 1px solid rgba(gray, .5);
+}

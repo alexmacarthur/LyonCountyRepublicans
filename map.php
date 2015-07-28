@@ -1,7 +1,7 @@
 <?php
 /*
- * Template Name: Standard Page
- * Description: Will be used for contact page, about page, and any other static page. 
+ * Template Name: Map Page
+ * Description: Shows where the different districts are and stuff.
  */
 ?>
 
@@ -16,14 +16,12 @@
 	    	</div>
 
 	 		<div class="row">
-	 		
 	 			<div class="col-md-12 page-content">
 	 					
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
 	 			</div>
-
 	 		</div>
 
 		</div>

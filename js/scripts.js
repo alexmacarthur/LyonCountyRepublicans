@@ -2,10 +2,80 @@ $('body').removeClass('no-js');
 
 $( document ).ready(function(){
     initMobileMenu();
+    subMenuManagement();
+    $('.nav-links').dropit({
+        action: 'mouseenter'
+    });
 });
 
 window.onresize = function(){
     initMobileLinkResize();
+}
+
+function isEI() {
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))      // If Internet Explorer, return version number
+        return true;
+    else      
+        return false;
+}
+
+// submenu hover
+function subMenuManagement(){
+    if(window.innerWidth > 768){
+
+        // // show the submenus on hover
+        // (function(){
+            
+        //     // clear styles if resizing from smaller screen 
+        //     $('.nav-links').attr('style', '');
+        //     $('.sub-menu').parent().children('a').removeClass('dropdown-arrow');
+
+        //     $('.nav-links li').mouseover(function(){
+        //         $(this).children('.sub-menu').show();
+        //     }).mouseout(function(){
+
+        //        $(this).children('.sub-menu').hide();
+        //        var submenu = $(this).children('.sub-menu');
+                
+        //        var timeout = setTimeout(function(){ submenu.hide(); }, 500);
+
+        //        $('.nav-links li').mouseover(function(){
+        //             $(this).children('.sub-menu').show();
+        //         }).mouseout(function(){
+
+        //             // var timeout = setTimeout(function(){ submenu.hide(); }, 500);
+
+        //         });
+
+        //     });
+        // })();
+
+    } else {
+
+        $('.mobile-menu-holder').css('height', $(document).height());
+
+        (function(){
+            var linksHeight = $('.nav-links').height(),
+            windowHeight = $(window).height();
+            console.log('links height:' + linksHeight);
+            console.log('window height:' + windowHeight);
+            $('.nav-links').css('margin-top', (windowHeight-linksHeight)/2);
+        })();
+    
+        // add arrow to link items with submenus
+        $('.sub-menu').parent().children('a').addClass('dropdown-arrow');
+
+        // show the submenus when clicked
+        (function(){
+            $('.nav-links li').click(function(){
+            $(this).children('.sub-menu').toggle();
+            });
+        })();
+
+    }
 }
 
 function initMobileMenu(){

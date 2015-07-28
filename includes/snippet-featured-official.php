@@ -3,7 +3,6 @@
       'post_type' => 'official',
       'orderby'=>'rand',
       'posts_per_page'   => 1
-      
     );
 
   $officials = get_posts($args);

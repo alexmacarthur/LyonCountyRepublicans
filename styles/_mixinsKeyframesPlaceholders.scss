@@ -31,11 +31,25 @@
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+%horizontal-align{
+	position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
 %average{
 	font-family: 'Average', serif;
 }
 %fjalla{
 	font-family: 'Fjalla One', sans-serif;
+}
+%transition-speed{
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
 }
 /* mixins */
 @mixin transitionSpeed{

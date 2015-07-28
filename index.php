@@ -22,21 +22,27 @@
 				<div class="row main-three-row">
 					<div class="col-md-4 main-three">
 						<div class="icon-holder">
-							<?php get_template_part('img/inline', 'info.svg'); ?>
+							<a class="main-link" href="<?php echo site_url(); ?>/about">
+								<?php get_template_part('img/inline', 'info.svg'); ?>
+							</a>
 						</div>
 						<h3>About Our Party</h3>
 						
 					</div>
 					<div class="col-md-4 main-three">
 						<div class="icon-holder">
-							<?php get_template_part('img/inline', 'people.svg'); ?>
+							<a class="main-link" href="<?php echo site_url(); ?>/candidates">
+								<?php get_template_part('img/inline', 'people.svg'); ?>
+							</a>
 						</div>
 						<h3>Who We Support</h3>
 						
 					</div>
 					<div class="col-md-4 main-three">
 						<div class="icon-holder">
-							<?php get_template_part('img/inline', 'handshake.svg'); ?>
+							<a class="main-link" href="<?php echo site_url(); ?>/about">
+								<?php get_template_part('img/inline', 'handshake.svg'); ?>
+							</a>
 						</div>
 						<h3>Get Involved</h3>
 						

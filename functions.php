@@ -37,9 +37,11 @@
 
 		// register custom JavaScript
 	    wp_register_script( 'custom-script', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1', true);
+	    wp_register_script( 'dropit', get_template_directory_uri() . '/js/dropit.js', array('jquery'), '1', true);
 
 	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well. 
 	    wp_enqueue_script( 'custom-script' );
+	    wp_enqueue_script( 'dropit' );
 
 	    // Enqueue custom styles
 	    wp_enqueue_style('custom-style');
@@ -103,6 +105,29 @@
 	    	'supports'      => array('')
 	    )
 	  );
+	  register_post_type( 'board',
+	    array(
+	      'labels' => array(
+			    'name'               => _x( 'Board Members', 'post type general name' ),
+			    'singular_name'      => _x( 'Board Member', 'post type singular name' ),
+			    'add_new'            => _x( 'Add New', 'Board Member' ),
+			    'add_new_item'       => __( 'Add New Board Member' ),
+			    'edit_item'          => __( 'Edit Board Member' ),
+			    'new_item'           => __( 'New Board Member' ),
+			    'all_items'          => __( 'All Board Member' ),
+			    'view_item'          => __( 'View Board Member' ),
+			    'search_items'       => __( 'Search Board Members' ),
+			    'not_found'          => __( 'No board found' ),
+			    'not_found_in_trash' => __( 'No board found in the trash' ), 
+			    'parent_item_colon'  => '',
+			    'menu_name'          => 'Board Members'
+	      ),
+	      	'public' => true,
+	      	'has_archive' => true,
+	      	'menu_position' => 5,
+	    	'supports'      => array('')
+	    )
+	  );
 	}
 
 	add_filter('manage_official_posts_columns' , 'official_cpt_columns');
@@ -113,12 +138,10 @@
 			$columns['date']
 		);
 
-		$new_columns = array(
-			'first_name' => __('First Name', 'ThemeName'),
-			'last_name' => __('Last Name', 'ThemeName'),
-			'title_position' => __('Title/Position', 'ThemeName'),
-			'district' => __('District', 'ThemeName'),
-		);
+		$new_columns['first_name']  = 'First Name';
+		$new_columns['last_name']  = 'Last Name';
+        $new_columns['title_position']  = 'Title/Position';
+        $new_columns['district']  = 'District';
 
 	    return array_merge($columns, $new_columns);
 	}
@@ -166,6 +189,64 @@
 				?>	
 
 				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('district', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			/* Just break out of the switch statement for everything else. */
+			default :
+				break;
+		}
+	}
+	add_filter('manage_board_posts_columns' , 'board_cpt_columns');
+	function board_cpt_columns($columns) {
+	
+		unset(
+			$columns['title'],
+			$columns['date']
+		);
+
+		$new_columns['bm_first_name']  = 'First Name';
+		$new_columns['bm_last_name']  = 'Last Name';
+        $new_columns['bm_title']  = 'Title/Position';
+
+	    return array_merge($columns, $new_columns);
+	}
+
+	add_action( 'manage_board_posts_custom_column', 'my_manage_board_columns', 10, 2 );
+
+	function my_manage_board_columns( $column, $post_id ) {
+
+		global $post;
+
+		switch( $column ) {
+
+			case 'bm_first_name' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_first_name', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			case 'bm_last_name' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_last_name', $post_id); ?></a>
+				
+				<?php
+
+				break;
+
+			case 'bm_title' :
+
+				?>	
+
+				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_title', $post_id); ?></a>
 				
 				<?php
 

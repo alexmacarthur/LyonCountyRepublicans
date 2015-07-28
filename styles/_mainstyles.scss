@@ -52,7 +52,7 @@ nav{
 }
 .nav-links-holder{
 	border-top: 3px dashed rgba($red, .5);
-	padding: 15px 0;
+	padding: 3.5rem 0;
 }
 .nav-links{
 	@extend .container;
@@ -69,6 +69,22 @@ nav{
 			font-size: 2.2rem;
 		}
 	}
+}
+ul.sub-menu{
+	@include boxShadow;
+	@extend %horizontal-align;
+	position:absolute;
+	display:none;
+	list-style:none;
+	background:white;
+	margin:0;
+	padding: 10px 20px 5px 20px;
+	white-space: nowrap;
+ 	border-right: 5px solid $red;
+  	border-bottom: 5px solid $red;
+  	li{
+  		display:block;
+  	}
 }
 // hero banner 
 .background{
@@ -113,6 +129,14 @@ nav{
 	}
 	h3{
 		margin:0;
+	}
+}
+.main-link{
+	&:hover{
+		svg{
+			@extend %transition-speed;
+			margin-top: -.5rem; 
+		}
 	}
 }
 .icon-holder{
@@ -348,4 +372,8 @@ footer{
 	-webkit-transform: translatey(0)!important;
 	transform: translatey(0)!important;
 }
-
+/* map styles */
+#map-canvas{
+	width:500px;
+	height:500px;
+}
