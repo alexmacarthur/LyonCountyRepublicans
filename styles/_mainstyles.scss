@@ -29,6 +29,10 @@ h3{
 	@extend h1;
 	font-size: 3rem;
 }
+h4{
+	@extend h1;
+	font-size: 2rem;
+}
 nav{
 	background:white;
 }
@@ -62,6 +66,7 @@ nav{
 	font-size: 2.1rem;
   	text-transform: uppercase;
 	li{
+		position:relative;
 		display:inline-block;
 		a{
 			@extend %fjalla;
@@ -71,19 +76,20 @@ nav{
 	}
 }
 ul.sub-menu{
-	@include boxShadow;
 	@extend %horizontal-align;
 	position:absolute;
 	display:none;
 	list-style:none;
 	background:white;
 	margin:0;
-	padding: 10px 20px 5px 20px;
+	padding: 2rem;
 	white-space: nowrap;
- 	border-right: 5px solid $red;
-  	border-bottom: 5px solid $red;
+	border: 5px solid $red;
+	z-index:2;
   	li{
   		display:block;
+  		text-transform: none;
+  		line-height: 5rem;
   	}
 }
 // hero banner 

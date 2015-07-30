@@ -36,6 +36,30 @@
 		position: relative;
 	}
 }
+.board-members-list{
+	padding:0;
+	li{
+		display:inline-block;
+		width: 33.33%;
+		float:left;
+		text-align:center;
+	}
+}
+.board-member-list-item{
+	padding: 1rem;
+	h4, span, a{
+		text-transform:none;
+		display:block;
+		clear:both;
+	}
+}
+.openings-list{
+	padding-left:20px;
+	li{
+		@extend %average;
+		font-size: 1.5rem;
+	}
+}
 /* wordpress styles */
 .alignleft{
 	float:left;
