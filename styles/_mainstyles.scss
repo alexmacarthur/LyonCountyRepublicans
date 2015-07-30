@@ -7,6 +7,9 @@ html{
 body{
 	background: $gray;
 }
+blockquote{
+	font-style: italic;
+}
 a{
 	&:hover{
 		text-decoration:none;
@@ -85,7 +88,7 @@ ul.sub-menu{
 	padding: 2rem;
 	white-space: nowrap;
 	border: 5px solid $red;
-	z-index:2;
+	z-index:5;
   	li{
   		display:block;
   		text-transform: none;

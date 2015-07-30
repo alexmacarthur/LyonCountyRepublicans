@@ -60,6 +60,36 @@
 		font-size: 1.5rem;
 	}
 }
+.row.donate-options{
+	text-align:center;
+	max-width: 800px;
+    margin: 25px auto 0 auto;
+	svg{
+		width: 75%;
+		display:block;
+		margin:0 auto;
+	}
+	h3{
+		color: $blue;
+		text-transform:none;
+		margin-bottom: 20px;
+	}
+}
+.donate-button{
+	font-size: 2rem;
+    text-transform: uppercase;
+    padding-top: .75rem!important;
+}
+.donate-action{
+	margin-top: 20px;
+}
+.donation-address{
+	font-weight:bold;
+}
+.get-involved-contact-button{
+	display: inline-block;
+	margin:0 auto;
+}
 /* wordpress styles */
 .alignleft{
 	float:left;

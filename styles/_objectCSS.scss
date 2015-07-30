@@ -1,8 +1,9 @@
 html{
-	a.red-button{
+	.red-button{
+		border:none;
 		background: $red;
 		padding: .5rem 1rem;
-	  	color: white;
+	  	color: white!important;
 	  	border-radius: 3px;
 	  	&:hover{
 	  		background: $light-red;
@@ -12,6 +13,10 @@ html{
 	  		width:100%;
 	  		text-align:center;
 	  	}
+	}
+	.blue-button{
+		@extend .red-button;
+		background: $blue;
 	}
 }
 .bold{

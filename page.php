@@ -22,6 +22,13 @@
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
+	 				<?php if(is_page('involved')): ?>
+						<a class="red-button get-involved-contact-button" href="<?php echo site_url(); ?>/contact">Contact Us!</a>
+						<?php echo smlsubform(); ?>
+	 				<?php endif; ?>
+
+
+
 	 			</div>
 
 	 		</div>
