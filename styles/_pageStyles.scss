@@ -84,11 +84,44 @@
 	margin-top: 20px;
 }
 .donation-address{
+	@extend %fjalla;
 	font-weight:bold;
+	color:$blue;
+	padding: .5rem 1rem;
+	font-size: 2rem;
+	border: 2px solid $blue;
+	border-radius: 3px;
+	display:inline-block;
+	padding-top: 0.75rem !important;
+	text-transform: uppercase;
 }
 .get-involved-contact-button{
 	display: inline-block;
 	margin:0 auto;
+}
+.sml_subscribe{
+	input{
+		@extend %average;
+		clear:both;
+		clear: both;
+	    width: 100%;
+	    padding: 5px;
+	    border-radius: 2px;
+	    border: none;
+	    @include placeholders;
+	}
+	.sml_name{
+		margin-bottom: 15px;
+	}
+}
+.sml_thankyou{
+	background: $blue;
+	color: white;
+	border-radius: 3px;
+	display:block;
+	width:100%;
+	text-align:center;
+	padding: 8px 5px;
 }
 /* wordpress styles */
 .alignleft{

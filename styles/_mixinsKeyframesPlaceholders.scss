@@ -52,6 +52,23 @@
 	transition: all .1s ease-in-out;
 }
 /* mixins */
+@mixin placeholders{
+	&::-webkit-input-placeholder {
+	   color: $dark-gray;
+	}
+
+	&:-moz-placeholder { /* Firefox 18- */
+	   color: $dark-gray;  
+	}
+
+	&::-moz-placeholder {  /* Firefox 19+ */
+	   color: $dark-gray;  
+	}
+
+	&:-ms-input-placeholder {  
+	   color: $dark-gray;  
+	}
+}
 @mixin transitionSpeed{
 	-webkit-transition: all .1s ease-in-out;
 	-moz-transition: all .2s ease-in-out;

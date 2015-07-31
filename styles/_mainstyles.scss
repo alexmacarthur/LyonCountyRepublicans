@@ -386,3 +386,14 @@ footer{
 	width:500px;
 	height:500px;
 }
+.dropdown-arrow:after{
+	@extend %vertical-align;
+	content:'';
+    width: 0; 
+	height: 0; 
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-top: 6px solid;
+	position: absolute;
+  	margin-left: 10px;
+}

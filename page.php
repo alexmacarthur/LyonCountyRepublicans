@@ -17,17 +17,34 @@
 
 	 		<div class="row">
 	 		
-	 			<div class="col-md-12 page-content">
+	 			<div class="col-md-9 page-content">
 	 					
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
 	 				<?php if(is_page('involved')): ?>
 						<a class="red-button get-involved-contact-button" href="<?php echo site_url(); ?>/contact">Contact Us!</a>
-						<?php echo smlsubform(); ?>
 	 				<?php endif; ?>
 
+	 			</div>
 
+	 			<div class="col-md-3">
+
+	 				<?php if(is_page('events')) : ?>
+
+		 				
+
+		 			<?php else: ?>
+
+						<div class="sidebar-box">
+			 				<h4>Sign up for our mailing list</h4>
+			 				<span>Get updates on upcoming events, related news, and opportunities to get involved.</span>
+			 				<?php echo smlsubform(); ?>
+		 				<div class="sidebar-box">
+
+		 				<?php get_template_part('includes/sidebar','involved'); ?>
+
+		 			<?php endif; ?>
 
 	 			</div>
 

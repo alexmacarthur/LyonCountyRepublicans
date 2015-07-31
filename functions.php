@@ -8,7 +8,7 @@
 		//remove_menu_page('tools.php');
 	}
 	add_action('admin_menu', 'remove_menus');
-	
+
 	// hide the admin bar on all pages
 	add_filter('show_admin_bar', '__return_false');
 

@@ -22,7 +22,9 @@
 	<nav>
 
 		<div class="logo-holder">
-			<?php get_template_part('img/inline', 'logo.svg'); ?>
+			<a href="<?php echo site_url(); ?>">
+				<?php get_template_part('img/inline', 'logo.svg'); ?>
+			</a>
 		</div>
 
 		<?php 
