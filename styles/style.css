@@ -1844,7 +1844,7 @@ footer {
   .mobile-menu-toggle:hover {
     cursor: pointer; }
 
-#close-mobile-menu {
+.mobile-menu-close {
   display: none;
   width: 50px;
   height: 50px;
@@ -1852,9 +1852,9 @@ footer {
   top: 25px;
   left: 25px;
   z-index: 1; }
-  #close-mobile-menu:hover {
+  .mobile-menu-close:hover {
     cursor: pointer; }
-  #close-mobile-menu svg {
+  .mobile-menu-close svg {
     height: 100%;
     width: 100%; }
 
