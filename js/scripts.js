@@ -6,7 +6,8 @@ $( document ).ready(function(){
 });
 
 window.onresize = function(){
-    initMobileLinkResize();
+    //initMobileLinkResize();
+    subMenuManagement();
 }
 
 function isEI() {
@@ -27,42 +28,28 @@ function subMenuManagement(){
         e.preventDefault();
     });
 
-    if(window.innerWidth > 768){
+    if(window.innerWidth > 650){
+
+        $('html').attr('style', '');
 
         $('.nav-links').dropit({
             action: 'mouseenter'
         });
 
-        // // show the submenus on hover
-        // (function(){
+        // show the submenus on hover
+        (function(){
             
-        //     // clear styles if resizing from smaller screen 
-        //     $('.nav-links').attr('style', '');
-        //     $('.sub-menu').parent().children('a').removeClass('dropdown-arrow');
+            // clear styles if resizing from smaller screen 
+            $('.nav-links').attr('style', '');
+            $('.sub-menu').parent().children('a').removeClass('dropdown-arrow');
 
-        //     $('.nav-links li').mouseover(function(){
-        //         $(this).children('.sub-menu').show();
-        //     }).mouseout(function(){
-
-        //        $(this).children('.sub-menu').hide();
-        //        var submenu = $(this).children('.sub-menu');
-                
-        //        var timeout = setTimeout(function(){ submenu.hide(); }, 500);
-
-        //        $('.nav-links li').mouseover(function(){
-        //             $(this).children('.sub-menu').show();
-        //         }).mouseout(function(){
-
-        //             // var timeout = setTimeout(function(){ submenu.hide(); }, 500);
-
-        //         });
-
-        //     });
-        // })();
+        })();
 
     } else {
 
         //$('.mobile-menu-holder').css('height', $(document).height());
+
+        $('html').css('overflow','hidden');
 
         (function(){
             var linksHeight = $('.nav-links').height(),
@@ -77,6 +64,7 @@ function subMenuManagement(){
         (function(){
             $('.nav-links li').click(function(){
                 $(this).children('.sub-menu').toggle();
+
             });
         })();
 

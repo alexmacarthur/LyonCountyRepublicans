@@ -57,6 +57,7 @@ address{
 #tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.entry-title{
 	padding: .5rem;
 	font-size: 1.4rem;
+	text-align: center;
 }
 // .tribe-events-has-events{
 // 	background:rgba($red, .15);
@@ -64,4 +65,14 @@ address{
 #tribe-events-content .tribe-events-calendar td, #tribe-events-content table.tribe-events-calendar{
 	border:none;
 	border-top: 1px solid rgba(gray, .5);
+}
+.row.upcoming-event-row{
+	margin-bottom: 1rem;
+}
+.upcoming-event-title{
+	display:block;
+	text-align:center;
+	a{
+		color:$red;
+	}
 }

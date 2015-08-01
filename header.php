@@ -27,6 +27,8 @@
 			</a>
 		</div>
 
+		<div class="mobile-menu-close"><i class="fa fa-times"></i></div>
+
 		<?php 
 			$defaults = array(
 				'theme_location'  => '',

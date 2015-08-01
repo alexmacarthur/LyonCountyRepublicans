@@ -28,7 +28,7 @@
 
 	 			</div>
 
-	 			<div class="col-md-3">
+	 			<div class="col-md-3 sidebar-content">
 
 	 				<?php if(is_page('events')) : ?>
 
