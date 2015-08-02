@@ -1,12 +1,19 @@
 @media screen and (max-width: 650px){
+	#mobile-menu-toggle{
+		display:block;
+	}
 	.nav-links-holder{
+		//@include offScreen;
 		position:absolute;
 		width:100%;
 		height:100%;
 		left:0;
-		top:0;
 		z-index:100;
 		background: rgba(white, .95);
+		top:-100%;
+		&:after{
+			display:block;
+		}
 	}
 	.nav-links{
 		display: block;

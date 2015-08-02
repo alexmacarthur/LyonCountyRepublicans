@@ -21,13 +21,17 @@
 
 	<nav>
 
+		<div id="mobile-menu-toggle">
+			<i class="fa fa-bars"></i>
+		</div>
+
 		<div class="logo-holder">
 			<a href="<?php echo site_url(); ?>">
 				<?php get_template_part('img/inline', 'logo.svg'); ?>
 			</a>
 		</div>
 
-		<div class="mobile-menu-close"><i class="fa fa-times"></i></div>
+	<!-- 	<div id="mobile-menu-close"><i class="fa fa-times"></i></div> -->
 
 		<?php 
 			$defaults = array(

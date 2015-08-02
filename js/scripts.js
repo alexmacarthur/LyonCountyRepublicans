@@ -1,8 +1,8 @@
 $('body').removeClass('no-js');
 
 $( document ).ready(function(){
-    initMobileMenu();
     subMenuManagement();
+    initMobileMenu();
 });
 
 window.onresize = function(){
@@ -47,9 +47,8 @@ function subMenuManagement(){
 
     } else {
 
-        //$('.mobile-menu-holder').css('height', $(document).height());
-
-        $('html').css('overflow','hidden');
+        // append the 'X' to close the mobile menu
+        $('.nav-links-holder').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
 
         (function(){
             var linksHeight = $('.nav-links').height(),
@@ -72,18 +71,31 @@ function subMenuManagement(){
 }
 
 function initMobileMenu(){
+
     $('#mobile-menu-toggle').click(function(){
-        if($('.nav-links').hasClass('open-mobile-menu')){
-            $('.nav-links').removeClass('open-mobile-menu');
+        if($('.nav-links-holder').hasClass('open-mobile-menu')){
+
+            $('.nav-links-holder').animate({
+                'top': '-100%'
+            });
+
+            $('#mobile-menu-close').hide();
             $('html').removeClass('overflow-hidden');
         }else{
-            $('.nav-links').addClass('open-mobile-menu');
+            $('.nav-links-holder').animate({
+                'top': '0'
+            });
+            $('#mobile-menu-close').show();
             $('html').addClass('overflow-hidden');
         }
     });
     
-    $('#close-mobile-menu').click(function(){
-        $('.nav-links').removeClass('open-mobile-menu');
+    $('#mobile-menu-close').click(function(){
+
+        alert('hi');
+        $('.nav-links-holder').animate({
+                'top': '-100%'
+            });
         $('html').removeClass('overflow-hidden');
     });
 } 

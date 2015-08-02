@@ -82,6 +82,13 @@
 	-webkit-transform: translatey($value);
 	transform: translatey($value);
 }
+@mixin onScreen($value: 0%){
+	-moz-transform: translatey($value);
+	-ms-transform: translatey($value);
+	-o-transform: translatey($value);
+	-webkit-transform: translatey($value);
+	transform: translatey($value);
+}
 @mixin translateX($value:-50%){
 	-webkit-transform: translateX($value);
 	-moz-transform: translateX($value);

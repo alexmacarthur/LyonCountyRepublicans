@@ -1542,6 +1542,9 @@ html .blue-button {
 .bold {
   font-weight: bold; }
 
+.overflow-hidden {
+  overflow: hidden; }
+
 html {
   font-size: 62.5%; }
 
@@ -1629,7 +1632,7 @@ ul.sub-menu {
   width: 100%;
   height: 500px;
   padding: 3rem 0;
-  background: url("http://macarthur.dev/lyoncountyrepublicans/wp-content/themes/lyoncountyrepublicans/img/flag.jpg") no-repeat;
+  background: url("../img/flag.jpg") no-repeat;
   background-size: cover;
   text-align: center;
   color: white;
@@ -1828,40 +1831,35 @@ footer {
   padding: 0 1.5rem; }
 
 /* mobile menu styles */
-.mobile-menu-toggle {
-  display: none;
-  width: 40px;
-  height: 40px; }
-
 .mobile-nav-links {
   display: none !important; }
 
-.mobile-menu-toggle {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  z-index: 1; }
-  .mobile-menu-toggle:hover {
+#mobile-menu-toggle {
+  display: none;
+  font-size: 4rem;
+  position: relative;
+  text-align: center;
+  border-bottom: 2px solid #560c0f;
+  z-index: 1;
+  color: #560c0f; }
+  #mobile-menu-toggle:hover {
     cursor: pointer; }
 
-.mobile-menu-close {
+#mobile-menu-close {
   display: none;
   width: 50px;
   height: 50px;
   position: absolute;
   top: 25px;
   left: 25px;
-  z-index: 1; }
-  .mobile-menu-close:hover {
+  z-index: 101;
+  font-size: 5rem;
+  color: #560c0f; }
+  #mobile-menu-close:hover {
     cursor: pointer; }
-  .mobile-menu-close svg {
-    height: 100%;
-    width: 100%; }
-
-.open-mobile-menu {
-  -ms-transform: translatey(0) !important;
-  -webkit-transform: translatey(0) !important;
-  transform: translatey(0) !important; }
+  #mobile-menu-close i {
+    display: block;
+    text-align: center; }
 
 /* map styles */
 #map-canvas {
@@ -2082,14 +2080,19 @@ address {
   margin-bottom: 15px; }
 
 @media screen and (max-width: 650px) {
+  #mobile-menu-toggle {
+    display: block; }
+
   .nav-links-holder {
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
-    top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.95); }
+    background: rgba(255, 255, 255, 0.95);
+    top: -100%; }
+    .nav-links-holder:after {
+      display: block; }
 
   .nav-links {
     display: block; }
