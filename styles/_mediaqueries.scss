@@ -1,4 +1,22 @@
 @media screen and (max-width: 650px){
+	.sidebar-section .more-info{
+		position:relative;
+		text-align:center;
+		display:block;
+		width:100%;
+		right:auto;
+		bottom:auto;
+		border-top: 1px solid rgba($gray, .9);
+    	width: 80%;
+    	margin: 15px auto 0 auto;
+    	padding: 5px 0;
+	}
+	.main-three h3{
+		font-size: 2rem;
+	}
+	.icon-holder{
+		height: 85px;
+	}
 	#mobile-menu-toggle{
 		display:block;
 	}
@@ -35,5 +53,13 @@
 				font-size: 1.7rem;
 			}
 		}
+	}
+}
+@media screen and (max-width: 550px){
+	.main-three h3{
+		font-size: 1.75rem;
+	}
+	.icon-holder{
+		height: 75px;
 	}
 }

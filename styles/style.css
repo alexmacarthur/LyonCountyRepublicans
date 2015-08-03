@@ -42,7 +42,7 @@ ul.sub-menu {
 span, p, a, .official-details span, footer a, .openings-list li, .sml_subscribe input {
   font-family: 'Average', serif; }
 
-*, .nav-links li a, .date-only, .month-only, .donation-address {
+*, .nav-links li a, .get-involved-section a, .date-only, .month-only, .donation-address {
   font-family: 'Fjalla One', sans-serif; }
 
 .main-link:hover svg {
@@ -2080,6 +2080,24 @@ address {
   margin-bottom: 15px; }
 
 @media screen and (max-width: 650px) {
+  .sidebar-section .more-info {
+    position: relative;
+    text-align: center;
+    display: block;
+    width: 100%;
+    right: auto;
+    bottom: auto;
+    border-top: 1px solid rgba(238, 238, 238, 0.9);
+    width: 80%;
+    margin: 15px auto 0 auto;
+    padding: 5px 0; }
+
+  .main-three h3 {
+    font-size: 2rem; }
+
+  .icon-holder {
+    height: 85px; }
+
   #mobile-menu-toggle {
     display: block; }
 
@@ -2110,5 +2128,11 @@ address {
       line-height: normal; }
       ul.sub-menu li a {
         font-size: 1.7rem; } }
+@media screen and (max-width: 550px) {
+  .main-three h3 {
+    font-size: 1.75rem; }
+
+  .icon-holder {
+    height: 75px; } }
 
 /*# sourceMappingURL=style.css.map */

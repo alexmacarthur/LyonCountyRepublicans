@@ -243,6 +243,7 @@ ul.sub-menu{
 		font-size: 2.2rem;
 	}
 	a{
+		@extend %fjalla;
 		color:$red;
 		background:white;
 		width: 70%;

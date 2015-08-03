@@ -20,7 +20,7 @@
 			<div class="container">
 
 				<div class="row main-three-row">
-					<div class="col-md-4 main-three">
+					<div class="col-md-4 col-sm-4 col-xs-4 main-three">
 						<div class="icon-holder">
 							<a class="main-link" href="<?php echo site_url(); ?>/about">
 								<?php get_template_part('img/inline', 'info.svg'); ?>
@@ -29,7 +29,7 @@
 						<h3>About Our Party</h3>
 						
 					</div>
-					<div class="col-md-4 main-three">
+					<div class="col-md-4 col-sm-4 col-xs-4 main-three">
 						<div class="icon-holder">
 							<a class="main-link" href="<?php echo site_url(); ?>/candidates">
 								<?php get_template_part('img/inline', 'people.svg'); ?>
@@ -38,7 +38,7 @@
 						<h3>Who We Support</h3>
 						
 					</div>
-					<div class="col-md-4 main-three">
+					<div class="col-md-4 col-sm-4 col-xs-4 main-three">
 						<div class="icon-holder">
 							<a class="main-link" href="<?php echo site_url(); ?>/about">
 								<?php get_template_part('img/inline', 'handshake.svg'); ?>
@@ -80,12 +80,10 @@
 								<?php the_content(); ?>
 								<div class="post-meta">
 									<span class="post-date"><i class="fa fa-calendar">&nbsp;&nbsp;</i>Posted on <?php echo get_the_date('F j, Y'); ?></span>
-									<span class="read-more">Read More</span>
+									<a href="<?php echo get_permalink(); ?>" class="read-more red-button">Read More</a>
 								</div>
 							</div>
 						</div>
-
-						
 
 		<?php endwhile; ?>
 
@@ -95,13 +93,13 @@
 			<h2 class="section-title">Upcoming Events</h2>
 			<div class="sidebar-section">
 				<?php get_template_part('includes/snippet', 'upcoming-events'); ?>
-				<a class="more-info" href="#">See All Events</a>
+				<a class="more-info" href="<?php echo site_url(); ?>/events">See All Events</a>
 			</div>
 
 			<h2 class="section-title">Featured Official</h2>
 			<div class="sidebar-section">
 				<?php get_template_part('includes/snippet', 'featured-official'); ?>
-				<a class="more-info" href="#">See Who Else We Support</a>
+				<a class="more-info" href="<?php echo site_url(); ?>/candidates">See Who Else We Support</a>
 			</div>
 
 			<div class="sidebar-section get-involved-section">

@@ -92,7 +92,6 @@ function initMobileMenu(){
     
     $('#mobile-menu-close').click(function(){
 
-        alert('hi');
         $('.nav-links-holder').animate({
                 'top': '-100%'
             });
