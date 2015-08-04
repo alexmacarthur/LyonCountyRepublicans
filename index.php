@@ -71,7 +71,7 @@
 										$imageURL = $image[0];
 										?>
 											<div class="featured-image" style="background:url('<?php echo $imageURL; ?>'); background-size:cover; background-position:center;">
-
+												
 											</div>
 										<?php
 									endif; 
