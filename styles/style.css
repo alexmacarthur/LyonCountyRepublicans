@@ -1793,8 +1793,11 @@ ul.sub-menu {
   color: #333;
   font-size: 2rem;
   text-transform: uppercase; }
-  .event-details a h4 {
-    margin: 0; }
+
+.event-title {
+  margin: 0; }
+  .event-title:hover {
+    color: #560c0f; }
 
 /* footer styles */
 footer {
@@ -2079,6 +2082,29 @@ address {
 .sidebar-box:first-child {
   margin-bottom: 15px; }
 
+@media screen and (max-width: 992px) {
+  .row.donate-options [class^="col-"]:first-child {
+    margin-bottom: 2rem; }
+  .row.donate-options svg {
+    max-width: 250px; }
+
+  .sml_subscribe input {
+    padding: 10px; }
+  .sml_subscribe input[type="submit"] {
+    padding: 5px; }
+
+  .signup-description {
+    margin-bottom: 1.5rem;
+    display: block; }
+
+  .event-details {
+    text-align: center; }
+
+  .date-details {
+    padding: 0; }
+
+  .event-title {
+    text-align: center; } }
 @media screen and (max-width: 650px) {
   .sidebar-section .more-info {
     position: relative;
@@ -2098,7 +2124,7 @@ address {
   .icon-holder {
     height: 85px; }
 
-  #mobile-menu-toggle {
+  #mobile-menu-toggle, #mobile-menu-close {
     display: block; }
 
   .nav-links-holder {
@@ -2108,6 +2134,7 @@ address {
     left: 0;
     z-index: 100;
     background: rgba(255, 255, 255, 0.95);
+    border-bottom: 3px dashed rgba(86, 12, 15, 0.5);
     top: -100%; }
     .nav-links-holder:after {
       display: block; }

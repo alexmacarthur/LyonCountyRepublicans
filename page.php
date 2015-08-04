@@ -30,15 +30,13 @@
 
 	 			<div class="col-md-3 sidebar-content">
 
-	 				<?php if(is_page('events')) : ?>
-
-		 				
+	 				<?php if(is_page('events')) : ?>	
 
 		 			<?php else: ?>
 
 						<div class="sidebar-box">
 			 				<h4>Sign up for our mailing list</h4>
-			 				<span>Get updates on upcoming events, related news, and opportunities to get involved.</span>
+			 				<span class="signup-description">Get updates on upcoming events, related news, and opportunities to get involved.</span>
 			 				<?php echo smlsubform(); ?>
 		 				<div class="sidebar-box">
 

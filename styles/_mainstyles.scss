@@ -293,9 +293,12 @@ ul.sub-menu{
 		color:$dark-gray;
 		font-size: 2rem;
   		text-transform: uppercase;
- 		h4{
- 			margin: 0;
- 		}
+	}
+}
+.event-title{
+	margin: 0;
+	&:hover{
+		color:$red;
 	}
 }
 /* footer styles */

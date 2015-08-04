@@ -79,13 +79,13 @@ function initMobileMenu(){
                 'top': '-100%'
             });
 
-            $('#mobile-menu-close').hide();
+
             $('html').removeClass('overflow-hidden');
         }else{
             $('.nav-links-holder').animate({
                 'top': '0'
             });
-            $('#mobile-menu-close').show();
+
             $('html').addClass('overflow-hidden');
         }
     });
