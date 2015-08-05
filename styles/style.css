@@ -39,13 +39,13 @@ ul.sub-menu {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-span, p, a, .official-details span, footer a, .openings-list li, .sml_subscribe input {
+span, p, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
   font-family: 'Average', serif; }
 
 *, .nav-links li a, .get-involved-section a, .date-only, .month-only, .donation-address {
   font-family: 'Fjalla One', sans-serif; }
 
-.main-link:hover svg {
+.nav-links li:hover, .main-link:hover svg, .get-involved-section a:hover {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out; }
 
@@ -1557,7 +1557,7 @@ blockquote {
 a:hover {
   text-decoration: none; }
 
-span, p, a {
+span, p, .page-content ul li, a {
   font-size: 1.7rem;
   line-height: 2.1rem; }
 
@@ -1577,6 +1577,24 @@ h4 {
 nav {
   background: white; }
 
+input, textarea {
+  clear: both;
+  clear: both;
+  width: 100%;
+  padding: 5px;
+  border-radius: 2px;
+  border: none; }
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #333; }
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    /* Firefox 18- */
+    color: #333; }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #333; }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #333; }
+
 .logo-holder {
   width: 250px;
   height: auto;
@@ -1591,19 +1609,26 @@ nav {
 
 .nav-links-holder {
   border-top: 3px dashed rgba(86, 12, 15, 0.5);
-  padding: 3.5rem 0; }
+  border-bottom: 3px solid #560c0f; }
 
 .nav-links {
   text-align: center;
   font-size: 2.1rem;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  margin: 0 auto; }
   .nav-links li {
     position: relative;
-    display: inline-block; }
+    display: inline-block;
+    height: 125px;
+    line-height: 125px; }
     .nav-links li a {
       color: #560c0f;
       font-size: 2.2rem;
       position: relative; }
+    .nav-links li:hover {
+      border-bottom: 5px solid #560c0f; }
+      .nav-links li:hover a {
+        color: #560c0f; }
 
 ul.sub-menu {
   position: absolute;
@@ -1613,12 +1638,16 @@ ul.sub-menu {
   margin: 0;
   padding: 2rem;
   white-space: nowrap;
-  border: 5px solid #560c0f;
-  z-index: 5; }
+  z-index: 5;
+  border: 2px solid #560c0f;
+  border-top: none; }
   ul.sub-menu li {
     display: block;
     text-transform: none;
-    line-height: 5rem; }
+    line-height: 5rem;
+    height: auto; }
+    ul.sub-menu li:hover {
+      border: none; }
 
 .background {
   background: rgba(0, 0, 0, 0.5); }
@@ -1758,7 +1787,12 @@ ul.sub-menu {
     display: block;
     padding: 1.5rem 2rem;
     font-size: 1.8rem;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    border: 2px solid #560c0f; }
+    .get-involved-section a:hover {
+      background: #560c0f;
+      border: 2px solid white;
+      color: white; }
 
 .get-involved-image {
   width: 50%;
@@ -1898,7 +1932,7 @@ footer {
     margin: 0; }
   .page-content a {
     color: #560c0f; }
-  .page-content p {
+  .page-content p, .page-content ul li {
     margin-top: 0; }
 
 .horizontal-line-holder h3 {
@@ -1937,7 +1971,7 @@ footer {
     display: block;
     margin: 0 auto; }
   .row.donate-options h3 {
-    color: #364299;
+    color: #560c0f;
     text-transform: none;
     margin-bottom: 20px; }
 
@@ -1951,10 +1985,10 @@ footer {
 
 .donation-address {
   font-weight: bold;
-  color: #364299;
+  color: #560c0f;
   padding: .5rem 1rem;
   font-size: 2rem;
-  border: 2px solid #364299;
+  border: 2px solid #560c0f;
   border-radius: 3px;
   display: inline-block;
   padding-top: 0.75rem !important;
@@ -1964,23 +1998,6 @@ footer {
   display: inline-block;
   margin: 0 auto; }
 
-.sml_subscribe input {
-  clear: both;
-  clear: both;
-  width: 100%;
-  padding: 5px;
-  border-radius: 2px;
-  border: none; }
-  .sml_subscribe input::-webkit-input-placeholder {
-    color: #333; }
-  .sml_subscribe input:-moz-placeholder {
-    /* Firefox 18- */
-    color: #333; }
-  .sml_subscribe input::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #333; }
-  .sml_subscribe input:-ms-input-placeholder {
-    color: #333; }
 .sml_subscribe .sml_name {
   margin-bottom: 15px; }
 
@@ -1992,6 +2009,30 @@ footer {
   width: 100%;
   text-align: center;
   padding: 8px 5px; }
+
+.signup-description {
+  margin-bottom: 15px;
+  display: block; }
+
+/* contact styles */
+.form-row {
+  background: white; }
+
+.form-content {
+  padding: 2rem 3rem; }
+
+form input, form textarea {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5); }
+  form input[type="submit"], form textarea[type="submit"] {
+    text-transform: uppercase; }
+form label {
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 2rem; }
+  form label span {
+    color: #560c0f; }
 
 /* wordpress styles */
 .alignleft {
@@ -2008,7 +2049,7 @@ footer {
   padding-left: 0; }
   .time-details li span {
     font-weight: 800; }
-  .time-details li span, .time-details li p {
+  .time-details li span, .time-details li p, .time-details li .page-content ul li, .page-content ul .time-details li li {
     display: inline; }
 
 .tribe-events-event-meta:first-child {
@@ -2142,8 +2183,12 @@ address {
   .nav-links {
     display: block; }
     .nav-links li {
+      line-height: normal;
+      height: auto;
       width: 100%;
       margin-bottom: 2rem; }
+      .nav-links li:hover {
+        border: none; }
       .nav-links li a {
         font-size: 3rem; }
 
@@ -2152,9 +2197,11 @@ address {
     background: none;
     border: none; }
     ul.sub-menu li {
-      line-height: normal; }
+      line-height: normal;
+      margin-bottom: 1rem; }
       ul.sub-menu li a {
-        font-size: 1.7rem; } }
+        font-size: 2rem;
+        text-transform: uppercase; } }
 @media screen and (max-width: 550px) {
   .main-three h3 {
     font-size: 1.75rem; }

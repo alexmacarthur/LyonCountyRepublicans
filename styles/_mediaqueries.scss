@@ -69,8 +69,13 @@
 	.nav-links{
 		display: block;
 		li{
+			line-height:normal;
+			height:auto;
 			width:100%;
 			margin-bottom: 2rem;
+			&:hover{
+				border:none;
+			}
 			a{
 				font-size: 3rem;
 			}
@@ -82,8 +87,10 @@
 		border:none;
 		li{
 			line-height:normal;
+			margin-bottom: 1rem;
 			a{
-				font-size: 1.7rem;
+				font-size: 2rem;
+    			text-transform: uppercase;
 			}
 		}
 	}

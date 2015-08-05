@@ -24,9 +24,9 @@ function isEI() {
 function subMenuManagement(){
 
     // disables links that have sub menus
-    $('.sub-menu').parent('li').children('a').click(function(e){
-        e.preventDefault();
-    });
+    // $('.sub-menu').parent('li').children('a').click(function(e){
+    //     e.preventDefault();
+    // });
 
     if(window.innerWidth > 650){
 

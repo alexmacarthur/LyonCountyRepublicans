@@ -39,6 +39,16 @@ h4{
 nav{
 	background:white;
 }
+input, textarea{
+	@extend %average;
+	clear:both;
+	clear: both;
+    width: 100%;
+    padding: 5px;
+    border-radius: 2px;
+    border: none;
+    @include placeholders;
+}
 // top navigation
 .logo-holder{
 	width: 250px;
@@ -59,7 +69,7 @@ nav{
 }
 .nav-links-holder{
 	border-top: 3px dashed rgba($red, .5);
-	padding: 3.5rem 0;
+	border-bottom: 3px solid $red;
 }
 .nav-links{
 	@extend .container;
@@ -68,14 +78,24 @@ nav{
 	text-align:center;
 	font-size: 2.1rem;
   	text-transform: uppercase;
+  	margin:0 auto;
 	li{
 		position:relative;
 		display:inline-block;
+		height: 125px;
+    	line-height: 125px;
 		a{
 			@extend %fjalla;
 			color: $red;
 			font-size: 2.2rem;
 			position: relative;
+		}
+		&:hover{
+			@extend %transition-speed;
+			border-bottom: 5px solid $red;
+			a{
+				color: $red;
+			}
 		}
 	}
 }
@@ -88,13 +108,18 @@ ul.sub-menu{
 	margin:0;
 	padding: 2rem;
 	white-space: nowrap;
-	border: 5px solid $red;
 	z-index:5;
   	li{
   		display:block;
   		text-transform: none;
   		line-height: 5rem;
+  		height: auto;
+  		&:hover{
+  			border:none;
+  		}
   	}
+  	border: 2px solid $red;
+  	border-top: none;
 }
 // hero banner 
 .background{
@@ -252,6 +277,13 @@ ul.sub-menu{
 		padding: 1.5rem 2rem;
 		font-size: 1.8rem;
   		text-transform: uppercase;
+  		border:2px solid $red;
+  		&:hover{
+  			@extend %transition-speed;
+  			background: $red;
+  			border:2px solid white;
+  			color:white;
+  		}
 	}
 }
 .get-involved-image{
