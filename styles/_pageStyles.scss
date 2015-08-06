@@ -31,6 +31,9 @@
 			@extend p;
 		}
 	}
+	strong{
+		font-family: inherit;
+	}
 }
 .horizontal-line-holder{
 	h3{
@@ -123,6 +126,37 @@
     display: block;
 }
 /* contact styles */
+.contact-table{
+	margin-bottom: 2rem;
+	td{
+		position:relative;
+		i{
+			font-size: 3rem;
+			position: absolute;
+    		top: 0;
+		}
+		span{
+			@extend h4;
+			@extend %fjalla;
+			a{
+				@extend %fjalla;
+				font-size:2rem;
+			}
+		}
+		&:first-child{
+			width: 4.5rem;
+		}
+	}
+	tr{
+		&:nth-child(2){
+			td{
+			}
+		}
+	}
+	.fa-envelope{
+	    font-size: 2.5rem;
+	}
+}
 .form-row{
 	background:white;
 }
@@ -146,6 +180,21 @@ form{
 	    	color:$red;
 	    }
 	}
+}
+#form-messages{
+	text-align:center;
+	border-radius: 3px;
+	color: white;
+	font-size: 1.5rem;
+    &.error{
+    	padding: .5rem;
+    	background: $red;
+    	margin-bottom: 1.5rem;
+    }
+    &.success{
+    	@extend .error;
+    	background:$green;
+    }
 }
 /* wordpress styles */
 .alignleft{

@@ -9,7 +9,6 @@
         $citystate = trim($_POST["citystate"]);
         $message = trim($_POST["message"]);
 
-
         // Check that data was sent to the mailer.
         if ( empty($name) ) {
             // Set a 400 (bad request) response code and exit.
@@ -38,7 +37,7 @@
         $recipient = "alex@macarthur.me";
 
         // Set the email subject.
-        $subject = "TilgrY Online Form Submitted";
+        $subject = "Lyon County Republicans Online Form Submitted";
 
         // Build the email content.
         $email_content = "Name: $name\n";

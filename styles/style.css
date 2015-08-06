@@ -42,7 +42,7 @@ ul.sub-menu {
 span, p, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
   font-family: 'Average', serif; }
 
-*, .nav-links li a, .get-involved-section a, .date-only, .month-only, .donation-address {
+*, .nav-links li a, .get-involved-section a, .date-only, .month-only, .donation-address, .contact-table td span, .contact-table td span a {
   font-family: 'Fjalla One', sans-serif; }
 
 .nav-links li:hover, .main-link:hover svg, .get-involved-section a:hover {
@@ -111,7 +111,7 @@ b, strong {
 dfn {
   font-style: italic; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .contact-table td span {
   font-size: 2em;
   margin: 0.67em 0; }
 
@@ -1561,7 +1561,7 @@ span, p, .page-content ul li, a {
   font-size: 1.7rem;
   line-height: 2.1rem; }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, .contact-table td span {
   text-transform: uppercase;
   font-size: 4rem; }
 
@@ -1571,7 +1571,7 @@ h2 {
 h3 {
   font-size: 3rem; }
 
-h4 {
+h4, .contact-table td span {
   font-size: 2rem; }
 
 nav {
@@ -1928,12 +1928,14 @@ footer {
   background: white; }
   .page-content img {
     margin: 2rem; }
-  .page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content h2, .page-content h3, .page-content h4, .page-content h5, .page-content h6 {
+  .page-content h1, .page-content h2, .page-content h3, .page-content h4, .page-content .contact-table td span, .contact-table td .page-content span, .page-content h2, .page-content h3, .page-content h4, .page-content .contact-table td span, .contact-table td .page-content span, .page-content h5, .page-content h6 {
     margin: 0; }
   .page-content a {
     color: #560c0f; }
   .page-content p, .page-content ul li {
     margin-top: 0; }
+  .page-content strong {
+    font-family: inherit; }
 
 .horizontal-line-holder h3 {
   background: white;
@@ -1952,7 +1954,7 @@ footer {
 
 .board-member-list-item {
   padding: 1rem; }
-  .board-member-list-item h4, .board-member-list-item span, .board-member-list-item a {
+  .board-member-list-item h4, .board-member-list-item .contact-table td span, .contact-table td .board-member-list-item span, .board-member-list-item span, .board-member-list-item a {
     text-transform: none;
     display: block;
     clear: both; }
@@ -2015,6 +2017,21 @@ footer {
   display: block; }
 
 /* contact styles */
+.contact-table {
+  margin-bottom: 2rem; }
+  .contact-table td {
+    position: relative; }
+    .contact-table td i {
+      font-size: 3rem;
+      position: absolute;
+      top: 0; }
+    .contact-table td span a {
+      font-size: 2rem; }
+    .contact-table td:first-child {
+      width: 4.5rem; }
+  .contact-table .fa-envelope {
+    font-size: 2.5rem; }
+
 .form-row {
   background: white; }
 
@@ -2033,6 +2050,18 @@ form label {
   font-size: 2rem; }
   form label span {
     color: #560c0f; }
+
+#form-messages {
+  text-align: center;
+  border-radius: 3px;
+  color: white;
+  font-size: 1.5rem; }
+  #form-messages.error, #form-messages.success {
+    padding: .5rem;
+    background: #560c0f;
+    margin-bottom: 1.5rem; }
+  #form-messages.success {
+    background: #519E8A; }
 
 /* wordpress styles */
 .alignleft {

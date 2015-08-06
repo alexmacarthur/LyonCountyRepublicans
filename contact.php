@@ -22,6 +22,45 @@
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
+	 				<hr>
+	
+					<table class="contact-table">	
+
+						<tr>
+							<td><i class="fa fa-home"></i></td>
+							<td>
+								<span>
+									Lyon County Republicans<br>
+									PO Box 643<br>
+									Marshall, Minnesota 56258
+				 				</span>
+			 				</td>
+						</tr>
+
+					</table>
+
+					<table class="contact-table">
+						<tr>
+							<td><i class="fa fa-envelope"></i></td>
+							<td>
+								<span>
+									<a href="mailto:lyoncountygop@gmail.com">lyoncountygop@gmail.com</a>
+				 				</span>
+			 				</td>
+						</tr>
+					</table>
+
+					<table class="contact-table">
+						<tr>
+							<td><i class="fa fa-facebook-square"></i></td>
+							<td>
+								<span>
+									<a href="https://www.facebook.com/pages/Lyon-County-MN-Republicans/104119089642669?fref=ts">We're on Facebook!</a>
+				 				</span>
+			 				</td>
+						</tr>
+					</table>
+	
 	 			</div>
 
 	 			<div class="col-md-6 form-content">
