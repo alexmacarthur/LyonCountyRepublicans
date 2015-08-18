@@ -1,11 +1,11 @@
 <?php
 	/* removes tabs on left admin menu */
 	function remove_menus(){
-		//remove_menu_page( 'edit.php' );   
-		//remove_menu_page( 'edit-comments.php' ); 
+		remove_menu_page( 'edit-comments.php' ); 
 		//remove_menu_page( 'themes.php' ); 
-		//remove_menu_page('plugins.php');
-		//remove_menu_page('tools.php');
+		remove_menu_page('plugins.php');
+		remove_menu_page('tools.php');
+
 	}
 	add_action('admin_menu', 'remove_menus');
 
@@ -15,9 +15,9 @@
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* removes widgets on dashboard */
-	//remove_action( 'welcome_panel', 'wp_welcome_panel' );
+	remove_action( 'welcome_panel', 'wp_welcome_panel' );
 	function remove_dashboard_meta() {
-        //remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' ); // remove WP news
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' ); // remove WP news
         //remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
         //remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
         //remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );

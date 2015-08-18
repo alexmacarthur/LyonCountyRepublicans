@@ -21,18 +21,6 @@
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
-				    <style>
-				      #map {
-				        width: 500px;
-				        height: 400px;
-				      }
-				    </style>
-				    <div id="map"></div>
-	
-				    <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false"></script>
-			
-
-
 	 			</div>
 	 		</div>
 
