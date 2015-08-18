@@ -23,6 +23,8 @@ function isEI() {
 // submenu hover
 function subMenuManagement(){
 
+    $('#mobile-men-close').remove();
+
     //disables links that have sub menus
     $('.sub-menu').parent('li').children('a').click(function(e){
         e.preventDefault();
@@ -79,9 +81,10 @@ function initMobileMenu(){
                 'top': '-100%'
             });
 
-
             $('html').removeClass('overflow-hidden');
+
         }else{
+
             $('.nav-links-holder').animate({
                 'top': '0'
             });
@@ -95,6 +98,7 @@ function initMobileMenu(){
         $('.nav-links-holder').animate({
                 'top': '-100%'
             });
+
         $('html').removeClass('overflow-hidden');
     });
 } 
