@@ -20,7 +20,9 @@ get_header(); ?>
 		<div class="container main-container page-container">
 
 			<div class="horizontal-line-holder">
+	    		<i class="fa fa-star left"></i>
 	    		<h1 class="page-title horizontal-line-value">Events</h1>
+	    		<i class="fa fa-star right"></i>
 	    	</div>
 
 

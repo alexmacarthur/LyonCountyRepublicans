@@ -91,19 +91,24 @@
 
 		<div class="col-md-4 sidebar-content">
 			<h2 class="section-title">Upcoming Events</h2>
+			<p class="section-description">There are several upcoming events for you to become involved with the LCR or the conservative cause as a whole.</p>
 			<div class="sidebar-section">
 				<?php get_template_part('includes/snippet', 'upcoming-events'); ?>
 				<a class="more-info" href="<?php echo site_url(); ?>/events">See All Events</a>
 			</div>
 
 			<h2 class="section-title">Featured Official</h2>
+			<p class="section-description">The LCR supports several area officials who fight for conservative values and principles.</p>
 			<div class="sidebar-section">
 				<?php get_template_part('includes/snippet', 'featured-official'); ?>
 				<a class="more-info" href="<?php echo site_url(); ?>/candidates">See Who Else We Support</a>
 			</div>
 
+			<h2 class="section-title">Looking to Get Involved?</h2>
+			<p class="description">There are plenty of opportunities to get involved in advancing the goals of the LCR. Find more here!</p>
 			<div class="sidebar-section get-involved-section">
-				<?php get_template_part('includes/snippet', 'get-involved'); ?>
+				<?php /* get_template_part('includes/snippet', 'get-involved');*/ ?>
+				<a class="get-involved-button" href="<?php echo site_url(); ?>/involved">Learn How</a>
 			</div>
 		</div>	
 

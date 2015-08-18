@@ -15,12 +15,13 @@
 	add_theme_support( 'post-thumbnails' ); 
 
 	/* removes widgets on dashboard */
+	//remove_action( 'welcome_panel', 'wp_welcome_panel' );
 	function remove_dashboard_meta() {
-        //remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+        //remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' ); // remove WP news
         //remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
         //remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
         //remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
-        //remove_meta_box( 'pageparentdiv', 'page', 'normal');
+        remove_meta_box( 'pageparentdiv', 'page', 'normal');
 	}
 	add_action('admin_init', 'remove_dashboard_meta');
 

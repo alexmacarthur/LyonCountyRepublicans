@@ -12,9 +12,11 @@
 	    <div class="container main-container page-container">
 
 	    	<div class="horizontal-line-holder">
+	    		<i class="fa fa-star left"></i>
 	    		<h1 class="page-title horizontal-line-value"><?php the_title(); ?></h1>
+	    		<i class="fa fa-star right"></i>
 	    	</div>
-
+	    	
 	 		<div class="row">
 	 		
 	 			<div class="col-md-9 page-content">

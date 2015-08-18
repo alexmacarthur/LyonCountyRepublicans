@@ -42,10 +42,10 @@ ul.sub-menu {
 span, p, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
   font-family: 'Average', serif; }
 
-*, .nav-links li a, .get-involved-section a, .date-only, .month-only, .donation-address, .contact-table td span, .contact-table td span a {
+*, .nav-links li a, .get-involved-button, .date-only, .month-only, .donation-address, .contact-table td span, .contact-table td span a {
   font-family: 'Fjalla One', sans-serif; }
 
-.nav-links li:hover, .main-link:hover svg, .get-involved-section a:hover {
+.nav-links li:hover, .main-link:hover svg, .get-involved-button:hover {
   -webkit-transition: all .1s ease-in-out;
   transition: all .1s ease-in-out; }
 
@@ -1720,6 +1720,9 @@ ul.sub-menu {
   font-size: 2.5rem;
   margin-bottom: .75rem; }
 
+.section-description {
+  margin: 0 0 2rem 0; }
+
 .post-box {
   background: white;
   padding: 1.5rem; }
@@ -1761,9 +1764,11 @@ ul.sub-menu {
   border-radius: 100%;
   margin: 0 auto; }
 
-.official-details span {
-  font-size: 2.1rem;
-  display: block; }
+.official-details {
+  margin-top: 1rem; }
+  .official-details span {
+    font-size: 2.1rem;
+    display: block; }
 
 .official-title {
   margin-bottom: .5rem; }
@@ -1773,26 +1778,18 @@ ul.sub-menu {
 
 /* get involved box */
 .get-involved-section {
-  padding: 1.5rem 0;
-  background: #560c0f;
-  text-align: center; }
-  .get-involved-section span {
+  padding: 2rem; }
+
+.get-involved-button {
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  padding: 1rem;
+  border: 2px solid #560c0f;
+  color: #560c0f; }
+  .get-involved-button:hover {
     color: white;
-    font-size: 2.2rem; }
-  .get-involved-section a {
-    color: #560c0f;
-    background: white;
-    width: 70%;
-    margin: 0 auto;
-    display: block;
-    padding: 1.5rem 2rem;
-    font-size: 1.8rem;
-    text-transform: uppercase;
-    border: 2px solid #560c0f; }
-    .get-involved-section a:hover {
-      background: #560c0f;
-      border: 2px solid white;
-      color: white; }
+    background: #560c0f; }
 
 .get-involved-image {
   width: 50%;
@@ -1853,8 +1850,21 @@ footer {
 
 .horizontal-line-holder {
   position: relative; }
+  .horizontal-line-holder i {
+    background: #f7f7f7;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); }
+    .horizontal-line-holder i.left {
+      left: 0;
+      padding-right: 1rem; }
+    .horizontal-line-holder i.right {
+      right: 0;
+      padding-left: 1rem; }
   .horizontal-line-holder:before {
-    content: "";
+    content: '';
     height: 3px;
     background: #333;
     left: 0;
@@ -1979,8 +1989,7 @@ footer {
 
 .donate-button {
   font-size: 2rem;
-  text-transform: uppercase;
-  padding-top: 0.75rem !important; }
+  text-transform: uppercase; }
 
 .donate-action {
   margin-top: 20px; }

@@ -200,7 +200,10 @@ ul.sub-menu{
 }
 .section-title{
 	font-size: 2.5rem;
-		margin-bottom: .75rem;
+	margin-bottom: .75rem;
+}
+.section-description{
+	margin:0 0 2rem 0;
 }
 .post-box{
 	background:white;
@@ -246,6 +249,7 @@ ul.sub-menu{
 	margin:0 auto;
 }
 .official-details{
+	margin-top: 1rem;
 	span{
 		@extend %average;
   		font-size: 2.1rem;
@@ -260,30 +264,20 @@ ul.sub-menu{
 }
 /* get involved box */
 .get-involved-section{
-	padding: 1.5rem 0;
-	background: $red;
+	padding: 2rem;
+}
+.get-involved-button{
+	@extend %fjalla;
+	text-transform:uppercase;
+	display:block;
 	text-align:center;
-	span{
-		color:white;
-		font-size: 2.2rem;
-	}
-	a{
-		@extend %fjalla;
-		color:$red;
-		background:white;
-		width: 70%;
-		margin: 0 auto;
-		display:block;
-		padding: 1.5rem 2rem;
-		font-size: 1.8rem;
-  		text-transform: uppercase;
-  		border:2px solid $red;
-  		&:hover{
-  			@extend %transition-speed;
-  			background: $red;
-  			border:2px solid white;
-  			color:white;
-  		}
+	padding: 1rem;
+	border: 2px solid $red;
+	color: $red;
+	&:hover{
+		@extend %transition-speed;
+		color: white;
+		background: $red;
 	}
 }
 .get-involved-image{
@@ -356,9 +350,26 @@ footer{
 }
 .horizontal-line-holder{
 	position: relative;
+	i{
+		background: $light-gray;
+		position:absolute;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		transform: translateY(-50%);
+		&.left{
+			left:0;
+			padding-right: 1rem;
+		}
+		&.right{
+			right:0;
+			padding-left: 1rem;
+		}
+	}
 	&:before{
 		@extend %vertical-align;
-		content: "";
+		content: '';
   		height: 3px;
   		background: $dark-gray;
   		left: 0;
