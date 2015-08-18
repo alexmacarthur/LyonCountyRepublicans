@@ -26,7 +26,7 @@
 								<?php get_template_part('img/inline', 'info.svg'); ?>
 							</a>
 						</div>
-						<h3>About Our Party</h3>
+						<h3>About the LCR</h3>
 						
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 main-three">
@@ -40,7 +40,7 @@
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-4 main-three">
 						<div class="icon-holder">
-							<a class="main-link" href="<?php echo site_url(); ?>/about">
+							<a class="main-link" href="<?php echo site_url(); ?>/involved">
 								<?php get_template_part('img/inline', 'handshake.svg'); ?>
 							</a>
 						</div>

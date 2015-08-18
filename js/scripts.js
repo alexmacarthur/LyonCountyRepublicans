@@ -23,10 +23,10 @@ function isEI() {
 // submenu hover
 function subMenuManagement(){
 
-    // disables links that have sub menus
-    // $('.sub-menu').parent('li').children('a').click(function(e){
-    //     e.preventDefault();
-    // });
+    //disables links that have sub menus
+    $('.sub-menu').parent('li').children('a').click(function(e){
+        e.preventDefault();
+    });
 
     if(window.innerWidth > 650){
 

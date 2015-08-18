@@ -35,6 +35,11 @@
 		font-family: inherit;
 	}
 }
+.sidebar-content{
+	.horizontal-line-holder:before{
+		height: 1px;
+	}
+}
 .horizontal-line-holder{
 	h3{
 		background: white;

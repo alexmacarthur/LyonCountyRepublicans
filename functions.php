@@ -21,7 +21,7 @@
         //remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
         //remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
         //remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
-        remove_meta_box( 'pageparentdiv', 'page', 'normal');
+        //remove_meta_box( 'pageparentdiv', 'page', 'normal'); // removes page attributes
 	}
 	add_action('admin_init', 'remove_dashboard_meta');
 

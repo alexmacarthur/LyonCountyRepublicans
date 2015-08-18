@@ -26,7 +26,8 @@ $cost = tribe_get_formatted_cost();
 $website = tribe_get_event_website_link();
 ?>
 
-<div class="col-md-6 tribe-events-meta-group tribe-events-meta-group-details">
+
+<div class="<?php if(tribe_get_venue_id() == 0){echo 'col-md-12';}else{echo 'col-md-6';};?> tribe-events-meta-group tribe-events-meta-group-details">
 	<div class="horizontal-line-holder">
 		<h3 class="tribe-events-single-section-title"> <?php _e( 'Details', 'tribe-events-calendar' ) ?> </h3>
 	</div>

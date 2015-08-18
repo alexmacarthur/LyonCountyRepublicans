@@ -105,7 +105,7 @@
 		 						}
 
 	 						}
-
+	 						echo '<div style="clear:both;"></div>';
 	 						echo '</ul>';
 	 					}
 	 				?>
@@ -121,8 +121,7 @@
 	 				}
 	 				
 	 				get_template_part('includes/sidebar','involved');
-	 				
-
+	 			
 	 			?>
 
 	 			</div>

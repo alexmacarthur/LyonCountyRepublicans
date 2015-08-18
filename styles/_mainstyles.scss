@@ -7,6 +7,10 @@ html{
 body{
 	background: $gray;
 }
+html,body{
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
 blockquote{
 	font-style: italic;
 }
@@ -70,6 +74,7 @@ input, textarea{
 .nav-links-holder{
 	border-top: 3px dashed rgba($red, .5);
 	border-bottom: 3px solid $red;
+
 }
 .nav-links{
 	@extend .container;
@@ -86,13 +91,12 @@ input, textarea{
     	line-height: 125px;
 		a{
 			@extend %fjalla;
-			color: $red;
+			color: rgba($dark-gray, .7);
 			font-size: 2.2rem;
 			position: relative;
 		}
 		&:hover{
 			@extend %transition-speed;
-			border-bottom: 5px solid $red;
 			a{
 				color: $red;
 			}
@@ -109,17 +113,17 @@ ul.sub-menu{
 	padding: 2rem;
 	white-space: nowrap;
 	z-index:5;
+	border: 1px solid rgba($dark-gray,.25);
   	li{
   		display:block;
   		text-transform: none;
   		line-height: 5rem;
   		height: auto;
-  		&:hover{
-  			border:none;
+  		text-transform: uppercase;
+  		&:not(:last-child){
+  			border-bottom: 1px solid rgba($gray,.84);
   		}
   	}
-  	border: 2px solid $red;
-  	border-top: none;
 }
 // hero banner 
 .background{

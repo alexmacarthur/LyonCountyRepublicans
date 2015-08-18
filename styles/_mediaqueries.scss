@@ -1,4 +1,7 @@
 @media screen and (max-width: 992px){
+	.sidebar-content{
+	    margin-top: 1.5rem;
+	}
 	.row.donate-options {
 		[class^="col-"]:first-child{
 			margin-bottom: 2rem;
@@ -31,6 +34,11 @@
 }
 
 @media screen and (max-width: 650px){
+	.board-members-list{
+		li{
+			width:50%;
+		}
+	}
 	.sidebar-section .more-info{
 		position:relative;
 		text-align:center;
@@ -101,5 +109,12 @@
 	}
 	.icon-holder{
 		height: 75px;
+	}
+}
+@media screen and (max-width: 450px){
+	.board-members-list{
+		li{
+			width:100%;
+		}
 	}
 }

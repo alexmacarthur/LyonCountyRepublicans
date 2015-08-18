@@ -57,7 +57,9 @@ address{
 #tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.entry-title{
 	padding: .5rem;
 	font-size: 1.4rem;
-	text-align: center;
+	a{
+		@extend %fjalla;
+	}
 }
 // .tribe-events-has-events{
 // 	background:rgba($red, .15);
@@ -75,4 +77,7 @@ address{
 	a{
 		color:$red;
 	}
+}
+.tribe-events-meta-group-details{
+    margin-bottom: 1rem;
 }
