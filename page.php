@@ -26,6 +26,8 @@
 
 	 				<?php if(is_page('involved')): ?>
 						<a class="red-button get-involved-contact-button" href="<?php echo site_url(); ?>/contact">Contact Us!</a>
+					<?php elseif(is_page('map')): ?>
+						<iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.govtrack.us/congress/members/embed/mapframe?bounds=-96.453,43.500,-90.502,48.748"></iframe>
 	 				<?php endif; ?>
 
 	 			</div>

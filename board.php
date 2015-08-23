@@ -96,8 +96,6 @@
 									<li class="board-member-list-item">
 										<h4><?php echo get_field('bm_first_name', $id); ?> <?php echo get_field('bm_last_name', $id); ?></h4>
 										<span><?php echo get_field('bm_title', $id); ?></span>
-										<a href="mailto:lyoncountygop@gmail.com?subject=Message for <?php echo get_field('bm_first_name', $id); ?>">Message <?php echo get_field('bm_first_name', $id); ?></a>
-
 									</li>
 
 		 							<?php
