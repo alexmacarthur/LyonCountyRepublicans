@@ -36,6 +36,10 @@
 	}
 }
 .sidebar-content{
+	ul{
+		margin:0;
+		padding:0;
+	}
 	.horizontal-line-holder:before{
 		height: 1px;
 	}
@@ -47,6 +51,12 @@
 		padding: 2rem;
 		z-index: 5;
 		position: relative;
+	}
+}
+.horizontal-line-value{
+	color: $dark-gray;
+	&:hover{
+		color: $red;
 	}
 }
 .board-members-list{
@@ -199,6 +209,17 @@ form{
     	@extend .error;
     	background:$green;
     }
+}
+.archives-list{
+	list-style:none;
+}
+.archive-year{
+	display:inline;
+	background: $light-gray;
+	padding: 0 15px;
+    margin: 0;
+    position:relative;
+    font-size: 1.75rem;
 }
 /* wordpress styles */
 .alignleft{
