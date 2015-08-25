@@ -18,6 +18,9 @@ a{
 	&:hover{
 		text-decoration:none;
 	}
+	&:focus{
+		text-decoration: none;
+	}
 }
 span,p,a{
 	@extend %average;

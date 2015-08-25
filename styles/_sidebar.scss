@@ -2,7 +2,7 @@
 	padding: 0 2rem;
 }
 .sidebar-box{
-	h3{
+	h3,h4,h5{
 		margin:0;
 	}
 	&:not(:first-child){
@@ -17,5 +17,11 @@
 	}
 	&:first-child{
 		margin-bottom: 15px;
+	}
+}
+.openings-list{
+	li{
+	    padding: .5rem 0 1.5rem 0;
+    	margin-left: 2.5rem;
 	}
 }

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header(); ?>
 
 	<main>
-		<div class="container main-container page-container">
+		<div class="container main-container page-container events-container">
 
 			<div class="horizontal-line-holder">
 	    		<i class="fa fa-star left"></i>
@@ -28,7 +28,7 @@ get_header(); ?>
 
 			<div class="row">
 
-				<div class="col-md-9 page-content">
+				<div class="col-md-9 page-content calendar-content">
 
 					<?php tribe_events_before_html(); ?>
 
@@ -40,7 +40,11 @@ get_header(); ?>
 
 				<div class="col-md-3 sidebar-content">
 
-						<h3>Upcoming Events</h3>
+					<div class="no-display display-550 message">
+						To view our full calendar, please use a larger screen.
+					</div>
+
+						<h3 class="events-sidebar-header">Upcoming Events</h3>
 						<?php 
 							$args = array('post_type' => 'tribe_events', 'posts_per_page' => 100, 'orderby' => '_EventStartDate', 'order' => 'ASC');
 							$loop = new WP_Query($args);

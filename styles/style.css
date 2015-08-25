@@ -39,7 +39,7 @@ ul.sub-menu {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-span, p, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
+span, p, .message, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
   font-family: 'Average', serif; }
 
 *, .nav-links li a, .get-involved-button, .date-only, .month-only, .donation-address, .contact-table td span, .contact-table td span a, #tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.entry-title a {
@@ -1545,6 +1545,21 @@ html .blue-button {
 .overflow-hidden {
   overflow: hidden; }
 
+.open-mobile-menu {
+  -ms-transform: translatey(0%) !important;
+  -webkit-transform: translatey(0%) !important;
+  transform: translatey(0%) !important; }
+
+.message {
+  text-align: center;
+  border: 2px solid rgba(51, 51, 51, 0.21);
+  border-radius: 3px;
+  padding: .5rem;
+  margin-bottom: 1.5rem; }
+
+.no-display {
+  display: none; }
+
 html {
   font-size: 62.5%; }
 
@@ -1560,8 +1575,10 @@ blockquote {
 
 a:hover {
   text-decoration: none; }
+a:focus {
+  text-decoration: none; }
 
-span, p, .page-content ul li, a {
+span, p, .message, .page-content ul li, a {
   font-size: 1.7rem;
   line-height: 2.1rem; }
 
@@ -1950,7 +1967,7 @@ footer {
     margin: 0; }
   .page-content a {
     color: #560c0f; }
-  .page-content p, .page-content ul li {
+  .page-content p, .page-content .message, .page-content ul li {
     margin-top: 0; }
   .page-content strong {
     font-family: inherit; }
@@ -2091,8 +2108,9 @@ form label {
   #form-messages.success {
     background: #519E8A; }
 
-.archives-list {
-  list-style: none; }
+.archive-list {
+  list-style-type: none;
+  text-align: center; }
 
 .archive-year {
   display: inline;
@@ -2117,7 +2135,7 @@ form label {
   padding-left: 0; }
   .time-details li span {
     font-weight: 800; }
-  .time-details li span, .time-details li p, .time-details li .page-content ul li, .page-content ul .time-details li li {
+  .time-details li span, .time-details li p, .time-details li .message, .time-details li .page-content ul li, .page-content ul .time-details li li {
     display: inline; }
 
 .tribe-events-event-meta:first-child {
@@ -2181,7 +2199,7 @@ address {
 .sidebar-content {
   padding: 0 2rem; }
 
-.sidebar-box h3 {
+.sidebar-box h3, .sidebar-box h4, .sidebar-box .contact-table td span, .contact-table td .sidebar-box span, .sidebar-box h5 {
   margin: 0; }
 .sidebar-box:not(:first-child):before {
   content: '';
@@ -2192,6 +2210,10 @@ address {
   background: rgba(51, 51, 51, 0.25); }
 .sidebar-box:first-child {
   margin-bottom: 15px; }
+
+.openings-list li {
+  padding: .5rem 0 1.5rem 0;
+  margin-left: 2.5rem; }
 
 @media screen and (max-width: 992px) {
   .sidebar-content {
@@ -2245,6 +2267,9 @@ address {
     display: block; }
 
   .nav-links-holder {
+    -ms-transform: translatey(-250%);
+    -webkit-transform: translatey(-250%);
+    transform: translatey(-250%);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -2252,7 +2277,7 @@ address {
     z-index: 100;
     background: rgba(255, 255, 255, 0.95);
     border-bottom: 3px dashed rgba(86, 12, 15, 0.5);
-    top: -100%; }
+    top: 0; }
     .nav-links-holder:after {
       display: block; }
 
@@ -2279,6 +2304,15 @@ address {
         font-size: 2rem;
         text-transform: uppercase; } }
 @media screen and (max-width: 550px) {
+  .sidebar-content h3 {
+    text-align: center; }
+
+  .display-550 {
+    display: block; }
+
+  .calendar-content {
+    display: none; }
+
   .main-three h3 {
     font-size: 1.75rem; }
 

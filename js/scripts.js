@@ -1,13 +1,15 @@
 $('body').removeClass('no-js');
 
 $( document ).ready(function(){
+    // because at least item is created in the DOM by jQuery, these MUST be in this order.
     subMenuManagement();
     initMobileMenu();
 });
 
 window.onresize = function(){
-    //initMobileLinkResize();
+    // because at least item is created in the DOM by jQuery, these MUST be in this order.
     subMenuManagement();
+    initMobileMenu();
 }
 
 function isEI() {
@@ -20,10 +22,46 @@ function isEI() {
         return false;
 }
 
+function initMobileMenu(){
+
+    $('#mobile-menu-toggle').click(function(){
+
+        // if it has this class, it's already open, so close it
+        if($('.nav-links-holder').hasClass('open-mobile-menu')){
+
+            // remove overflow-hidden so full page can be used
+            $('html').removeClass('overflow-hidden');
+
+            // remove the class that keeps it open
+            $('.nav-links-holder').removeClass('open-mobile-menu');
+
+        // if it doesn't, it's already closed, so open it
+        }else{
+
+            // set overflow-hidden so user can't scroll all over
+            $('html').addClass('overflow-hidden');
+
+            // add the class that keeps it open
+            $('.nav-links-holder').addClass('open-mobile-menu');
+        }
+
+    });
+    
+    // closing the mobile menu
+    $('#mobile-menu-close').click(function(){
+
+        // remove the class that keeps it open
+        $('.nav-links-holder').removeClass('open-mobile-menu');
+
+        // remove overflow-hidden so full page can be used
+        $('html').removeClass('overflow-hidden');
+    });
+} 
+
 // submenu hover
 function subMenuManagement(){
 
-    $('#mobile-men-close').remove();
+    $('#mobile-menu-close').remove();
 
     //disables links that have sub menus
     $('.sub-menu').parent('li').children('a').click(function(e){
@@ -32,8 +70,10 @@ function subMenuManagement(){
 
     if(window.innerWidth > 650){
 
+        // clean HTML inline styles
         $('html').attr('style', '');
 
+        // set the dropdown open action to hover
         $('.nav-links').dropit({
             action: 'mouseenter'
         });
@@ -49,59 +89,26 @@ function subMenuManagement(){
 
     } else {
 
+        // set the dropdown open action to hover
+        $('.nav-links').dropit({
+            action: 'click'
+        });
+
         // append the 'X' to close the mobile menu
         $('.nav-links-holder').append("<div id='mobile-menu-close'><i class='fa fa-times'></i></div>");
 
+        // position the links in the center of the screen, vertically
         (function(){
             var linksHeight = $('.nav-links').height(),
             windowHeight = $(window).height();
             $('.nav-links').css('margin-top', (windowHeight-linksHeight)/2);
         })();
     
-        // add arrow to link items with submenus
+        // append arrow to link items with submenus
         $('.sub-menu').parent().children('a').addClass('dropdown-arrow');
-
-        // show the submenus when clicked
-        (function(){
-            $('.nav-links li').click(function(){
-                $(this).children('.sub-menu').toggle();
-
-            });
-        })();
 
     }
 }
-
-function initMobileMenu(){
-
-    $('#mobile-menu-toggle').click(function(){
-        if($('.nav-links-holder').hasClass('open-mobile-menu')){
-
-            $('.nav-links-holder').animate({
-                'top': '-100%'
-            });
-
-            $('html').removeClass('overflow-hidden');
-
-        }else{
-
-            $('.nav-links-holder').animate({
-                'top': '0'
-            });
-
-            $('html').addClass('overflow-hidden');
-        }
-    });
-    
-    $('#mobile-menu-close').click(function(){
-
-        $('.nav-links-holder').animate({
-                'top': '-100%'
-            });
-
-        $('html').removeClass('overflow-hidden');
-    });
-} 
 
 /* ajax contact form */
 $(function() {

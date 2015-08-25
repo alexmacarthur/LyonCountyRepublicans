@@ -1,3 +1,4 @@
+<div class="sidebar-box">
 <?php
 	$year_prev = null;
 	$months = $wpdb->get_results(	"SELECT DISTINCT MONTH( post_date ) AS month ,
@@ -34,3 +35,4 @@
 		endforeach; 
 	?>
 		</ul>
+</div>

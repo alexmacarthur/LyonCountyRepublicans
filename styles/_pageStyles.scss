@@ -210,8 +210,12 @@ form{
     	background:$green;
     }
 }
-.archives-list{
-	list-style:none;
+.archive-list{
+	list-style-type:none;
+	text-align:center;
+	li{
+		
+	}
 }
 .archive-year{
 	display:inline;
