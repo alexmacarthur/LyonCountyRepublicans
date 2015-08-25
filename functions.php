@@ -81,12 +81,60 @@
 		register_nav_menu('primary-menu', __('Primary Menu'));
 	}
 
+	// enable searching custom fields
+	add_filter('posts_join', 'search_join' );
+	function search_join ($join){
+	    global $pagenow, $wpdb;
+	    // Filter only when editing post types that are not 'page' or 'post' or 'testimonial,' since none of these have custom fields
+	    if ( is_admin() && $pagenow=='edit.php' && !($_GET['post_type'] =='page' || $_GET['post_type'] =='post') && $_GET['s'] != '') {    
+	        $join .='LEFT JOIN '.$wpdb->postmeta. ' ON '. $wpdb->posts . '.ID = ' . $wpdb->postmeta . '.post_id ';
+	    }
+	    return $join;
+	}
+
+	// enable searching custom fields
+	add_filter( 'posts_where', 'search_where' );
+	function search_where( $where ){
+	    global $pagenow, $wpdb;
+	    // Filter only when editing post types that are not 'page' or 'post' or 'testimonial,' since none of these have custom fields
+	    if ( is_admin() && $pagenow=='edit.php' && !($_GET['post_type'] =='page' || $_GET['post_type'] =='post') && $_GET['s'] != '') {
+	        $where = preg_replace(
+	       "/\(\s*".$wpdb->posts.".post_title\s+LIKE\s*(\'[^\']+\')\s*\)/",
+	       "(".$wpdb->posts.".post_title LIKE $1) OR (".$wpdb->postmeta.".meta_value LIKE $1)", $where );
+	    }
+	    return $where;
+	}
+
 	add_action( 'init', 'create_post_type' );
 	function create_post_type() {
 	  register_post_type( 'official',
 	    array(
 	      'labels' => array(
-			    'name'               => _x( 'Officials', 'post type general name' ),
+			    'name'               => _x( 'GOP Officials', 'post type general name' ),
+			    'singular_name'      => _x( 'GOP Official', 'post type singular name' ),
+			    'add_new'            => _x( 'Add New', 'Official' ),
+			    'add_new_item'       => __( 'Add New Official' ),
+			    'edit_item'          => __( 'Edit Official' ),
+			    'new_item'           => __( 'New Official' ),
+			    'all_items'          => __( 'All Official' ),
+			    'view_item'          => __( 'View Official' ),
+			    'search_items'       => __( 'Search Officials' ),
+			    'not_found'          => __( 'No official found' ),
+			    'not_found_in_trash' => __( 'No official found in the trash' ), 
+			    'parent_item_colon'  => '',
+			    'menu_name'          => 'GOP Officials'
+	      ),
+	      	'public' => true,
+	      	'has_archive' => true,
+	      	'menu_position' => 5,
+	    	'supports'      => array('')
+	    )
+	  );
+
+	  register_post_type( 'all_official',
+	    array(
+	      'labels' => array(
+			    'name'               => _x( 'All Officials', 'post type general name' ),
 			    'singular_name'      => _x( 'Official', 'post type singular name' ),
 			    'add_new'            => _x( 'Add New', 'Official' ),
 			    'add_new_item'       => __( 'Add New Official' ),
@@ -98,7 +146,7 @@
 			    'not_found'          => __( 'No official found' ),
 			    'not_found_in_trash' => __( 'No official found in the trash' ), 
 			    'parent_item_colon'  => '',
-			    'menu_name'          => 'Officials'
+			    'menu_name'          => 'All Officials'
 	      ),
 	      	'public' => true,
 	      	'has_archive' => true,
@@ -106,6 +154,7 @@
 	    	'supports'      => array('')
 	    )
 	  );
+
 	  register_post_type( 'board',
 	    array(
 	      'labels' => array(
@@ -131,134 +180,11 @@
 	  );
 	}
 
-	add_filter('manage_official_posts_columns' , 'official_cpt_columns');
-	function official_cpt_columns($columns) {
-	
-		unset(
-			$columns['title'],
-			$columns['date']
-		);
+	get_template_part('includes/functions','official');
+	get_template_part('includes/functions','all-official');
+	get_template_part('includes/functions','board');
 
-		$new_columns['first_name']  = 'First Name';
-		$new_columns['last_name']  = 'Last Name';
-        $new_columns['title_position']  = 'Title/Position';
-        $new_columns['district']  = 'District';
-
-	    return array_merge($columns, $new_columns);
-	}
-
-	add_action( 'manage_official_posts_custom_column', 'my_manage_official_columns', 10, 2 );
-
-	function my_manage_official_columns( $column, $post_id ) {
-
-		global $post;
-
-		switch( $column ) {
-
-			case 'first_name' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('first_name', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			case 'last_name' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('last_name', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			case 'title_position' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('title', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			case 'district' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('district', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			/* Just break out of the switch statement for everything else. */
-			default :
-				break;
-		}
-	}
-	add_filter('manage_board_posts_columns' , 'board_cpt_columns');
-	function board_cpt_columns($columns) {
-	
-		unset(
-			$columns['title'],
-			$columns['date']
-		);
-
-		$new_columns['bm_first_name']  = 'First Name';
-		$new_columns['bm_last_name']  = 'Last Name';
-        $new_columns['bm_title']  = 'Title/Position';
-
-	    return array_merge($columns, $new_columns);
-	}
-
-	add_action( 'manage_board_posts_custom_column', 'my_manage_board_columns', 10, 2 );
-
-	function my_manage_board_columns( $column, $post_id ) {
-
-		global $post;
-
-		switch( $column ) {
-
-			case 'bm_first_name' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_first_name', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			case 'bm_last_name' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_last_name', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			case 'bm_title' :
-
-				?>	
-
-				<a href="<?php echo get_site_url(); ?>/wp-admin/post.php?post=<?php echo $post_id; ?>&action=edit"><?php echo get_field('bm_title', $post_id); ?></a>
-				
-				<?php
-
-				break;
-
-			/* Just break out of the switch statement for everything else. */
-			default :
-				break;
-		}
-	}
-
+	// manage board positions
 	function checkForOpenings(){
 		$boardPositions = array(
 			0 => array(
