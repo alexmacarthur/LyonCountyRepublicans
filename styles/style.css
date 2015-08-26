@@ -2061,6 +2061,11 @@ footer {
   margin-bottom: 15px;
   display: block; }
 
+/* officials pages */
+.official-info.red-button, html .official-info.blue-button, .official-info.tribe-events-gcal, .official-info.tribe-events-ical {
+  display: inline-block;
+  margin-top: .5rem; }
+
 /* contact styles */
 .contact-table {
   margin-bottom: 2rem; }

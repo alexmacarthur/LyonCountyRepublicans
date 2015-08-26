@@ -1,6 +1,6 @@
 <?php
 /*
- * Template Name: Candidates
+ * Template Name: Our Officials
  * Description: Displays the officials we support.
  */
 ?>
