@@ -9,6 +9,15 @@
 	}	
 }
 @media screen and (max-width: 992px){
+	h3.single-event-title,h3.single-event-date,.events-sidebar-header{
+		display:block;
+		text-align:center;
+	}
+	a.all-events{display:none;}
+	.tribe-events-cal-links{
+		text-align:center;
+	    margin-top: 2rem;
+	}
 	.nav-links-holder{
 	    text-align: center;
 	}
