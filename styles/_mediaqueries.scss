@@ -1,4 +1,25 @@
+@media screen and (max-width: 1200px){
+	.nav-links{
+		width: 100%;
+		li{
+			a{
+				font-size: 1.9rem;
+			}
+		}
+	}	
+}
 @media screen and (max-width: 992px){
+	.nav-links-holder{
+	    text-align: center;
+	}
+	.nav-links{
+		li{
+			height:auto;
+			line-height:normal;
+		    padding: 1rem;
+		}
+		display:inline;
+	}
 	.sidebar-content{
 	    margin-top: 1.5rem;
 	}
