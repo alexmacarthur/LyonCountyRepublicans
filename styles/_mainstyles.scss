@@ -254,10 +254,11 @@ ul.sub-menu{
 	margin-bottom: 4.5rem;
 }
 .official-image{
-	height: 200px;
+	height: 250px;
 	width: 200px;
-	border-radius:100%;
+	//border-radius:100%;
 	margin:0 auto;
+	position:relative;
 }
 .official-details{
 	margin-top: 1rem;
@@ -272,6 +273,42 @@ ul.sub-menu{
 }
 .official-name{
 	margin: 1rem 0 0rem;
+}
+.official-info.red-button{
+	display: inline-block;
+	margin-top: .5rem;
+}
+span.official-phone{
+    margin-top: .5rem;
+	i{
+	    margin-right: 5px;
+	}
+	a{
+		color:$dark-gray;
+	}
+}
+.party-circle{
+	background:white;
+	position:absolute;
+    bottom: 8px;
+    left:0;
+	color:white;
+	text-transform:uppercase;
+	font-size: 1.75rem;
+	display: inline-block;
+	padding: .25rem 1rem;
+	border: 2px solid $dark-gray;
+	&.republican{
+		background:rgba(#dc1f26, .85);
+		border-color: rgba(114, 16, 20, 0.5);
+	}
+	&.democrat{
+		background:rgba(#35409a, .85);
+		border-color: rgba(19, 23, 56, 0.5);
+	}
+	&.other{
+		background: rgba($dark-gray, .85);
+	}
 }
 /* get involved box */
 .get-involved-section{

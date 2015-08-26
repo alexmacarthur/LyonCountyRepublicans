@@ -1781,10 +1781,10 @@ ul.sub-menu {
   margin-bottom: 4.5rem; }
 
 .official-image {
-  height: 200px;
+  height: 250px;
   width: 200px;
-  border-radius: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 .official-details {
   margin-top: 1rem; }
@@ -1797,6 +1797,37 @@ ul.sub-menu {
 
 .official-name {
   margin: 1rem 0 0rem; }
+
+.official-info.red-button, html .official-info.blue-button, .official-info.tribe-events-gcal, .official-info.tribe-events-ical {
+  display: inline-block;
+  margin-top: .5rem; }
+
+span.official-phone {
+  margin-top: .5rem; }
+  span.official-phone i {
+    margin-right: 5px; }
+  span.official-phone a {
+    color: #333; }
+
+.party-circle {
+  background: white;
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  display: inline-block;
+  padding: .25rem 1rem;
+  border: 2px solid #333; }
+  .party-circle.republican {
+    background: rgba(220, 31, 38, 0.85);
+    border-color: rgba(114, 16, 20, 0.5); }
+  .party-circle.democrat {
+    background: rgba(53, 64, 154, 0.85);
+    border-color: rgba(19, 23, 56, 0.5); }
+  .party-circle.other {
+    background: rgba(51, 51, 51, 0.85); }
 
 /* get involved box */
 .get-involved-section {
@@ -2060,11 +2091,6 @@ footer {
 .signup-description {
   margin-bottom: 15px;
   display: block; }
-
-/* officials pages */
-.official-info.red-button, html .official-info.blue-button, .official-info.tribe-events-gcal, .official-info.tribe-events-ical {
-  display: inline-block;
-  margin-top: .5rem; }
 
 /* contact styles */
 .contact-table {

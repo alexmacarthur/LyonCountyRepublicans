@@ -26,44 +26,62 @@
 	 				<?php the_content(); ?>
 
 		 			<?php 
-					  $args = array(
+					  	$args = array(
 					      	'post_type' => 'all_official',
 					      	'posts_per_page' 	=> -1
 					    );
 
-					  $allOfficialsPage = get_posts($args);
+						$allOfficialsPage = get_posts($args);
 
-					  if($allOfficialsPage){
-					    foreach ($allOfficialsPage as $official){
+						$officialPositions = ['U.S. President','U.S. Vice President','U.S. Senator','U.S. Representative','MN Senator','MN Representative'];
 
-					      $postID = $official->ID;
-					      ?>
+						foreach($officialPositions as $position){
+						  	foreach($allOfficialsPage as $official){
+						  		$postID = $official->ID;
+						  		if(get_field('AO_position', $postID) == $position){
+						  			?>
 
-					        <div class="col-md-4 featured-official">
+									<div class="col-md-4 featured-official">
 
-					          <div class="official-image" style="background:url('<?php echo get_field('AO_profile_image', $postID); ?>'); background-position: 50% 10%; background-size:cover;">
+							        <div class="official-image" style="background:url('<?php echo get_field('AO_profile_image', $postID); ?>'); background-position: 50% 10%; background-size:cover;">
+							        	<?php 
+							        		if(get_field('AO_party', $postID) == 'Republican'){
+							        			$partyClass = 'republican';
+							        			$partyLabel = 'Republican Party';
+							        		}elseif(get_field('AO_party', $postID) == 'Democrat'){
+							        			$partyClass = 'democrat';
+							        			$partyLabel = 'Democratic Party';
+							        		}else{
+							        			$partyClass = 'other';
+							        			$partyLabel = get_field('AO_other_party', $postID);
+							        		}
+							        	?>
+							        	<div class="party-circle <?php echo $partyClass; ?>">
+											<?php echo $partyLabel; ?>
+							        	</div>
+							        </div>
 
-					          </div>
-					          <div class="official-details">
-					              <h3 class="official-name"><?php echo get_field('AO_first_name', $postID) . ' ' . get_field('AO_last_name', $postID); ?></h3>
-					              <span class="official-title"><?php echo get_field('AO_position', $postID); ?></span>
-					              <?php if(get_field('AO_website', $postID)): ?>
-					                <span class="official-link"><a class="official-info" href="<?php echo get_field('AO_website', $postID); ?>">Official Website</a></span>
-					              <?php endif; ?>
-					              <?php if(get_field('AO_contact_online', $postID)): ?>
-					                <span class="official-link"><a class="official-info red-button" href="<?php echo get_field('AO_contact_online', $postID); ?>">Contact Official</a></span>
-					              <?php endif; ?>
+							        <div class="official-details">
+							            <h3 class="official-name"><?php echo get_field('AO_first_name', $postID) . ' ' . get_field('AO_last_name', $postID); ?></h3>
+							            <span class="official-title"><?php echo get_field('AO_position', $postID); ?></span>
+							            <?php if(get_field('AO_website', $postID)): ?>
+							                <span class="official-link"><a target="_blank" class="official-info" href="<?php echo get_field('AO_website', $postID); ?>">Official Website</a></span>
+							            <?php endif; ?>
+							            <?php if(get_field('AO_contact_online', $postID)): ?>
+							              	<span class="official-link"><a target="_blank" class="official-info red-button" href="<?php echo get_field('AO_contact_online', $postID); ?>">Contact Online</a></span>
+							            <?php endif; ?>
+							            <?php if(get_field('AO_phone_number', $postID)): ?>
+							                <span class="official-phone"><i class="fa fa-phone"></i><a href="tel:<?php echo get_field('AO_phone_number', $postID); ?>"><?php echo get_field('AO_phone_number', $postID); ?></a></span>
+							            <?php endif; ?>
 
-					          </div>
+							        </div>
 
-					        </div>
+							        </div>
 
-					      <?php
-
-					    }
-
-					  }
-
+						  			<?php
+						  		}
+						  	}
+						}
 
 					?>
 

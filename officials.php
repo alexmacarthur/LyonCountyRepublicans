@@ -51,10 +51,10 @@
 					              <h3 class="official-name"><?php echo get_field('first_name', $postID) . ' ' . get_field('last_name', $postID); ?></h3>
 					              <span class="official-title"><?php echo get_field('title', $postID); ?></span>
 					              <?php if(get_field('district', $postID)): ?>
-					                <span class="official-district"><?php echo get_field('district', $postID); ?></span>
+					                <span class="official-district">District <?php echo get_field('district', $postID); ?></span>
 					              <?php endif; ?>
 					              <?php if(get_field('link', $postID)): ?>
-					                <span class="official-link"><a class="official-info" href="<?php echo get_field('link', $postID); ?>">More Info</a></span>
+					                <span class="official-link"><a class="official-info red-button" href="<?php echo get_field('link', $postID); ?>">More Info</a></span>
 					              <?php endif; ?>
 					          </div>
 
