@@ -29,6 +29,10 @@ get_header(); ?>
 			<div class="row">
 
 				<div class="col-md-9 page-content calendar-content">
+				
+<!-- 					<div class="no-display display-550 message">
+						To view our full calendar, please use a larger screen.
+					</div> -->
 
 					<?php tribe_events_before_html(); ?>
 
@@ -39,10 +43,6 @@ get_header(); ?>
 				</div>
 
 				<div class="col-md-3 sidebar-content">
-
-					<div class="no-display display-550 message">
-						To view our full calendar, please use a larger screen.
-					</div>
 
 						<h3 class="events-sidebar-header">Upcoming Events</h3>
 						<?php 

@@ -39,7 +39,7 @@ ul.sub-menu {
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
 
-span, p, .message, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li {
+span, p, .message, .page-content ul li, a, input, textarea, .official-details span, footer a, .openings-list li, #tribe-events-content dd {
   font-family: 'Average', serif; }
 
 *, .nav-links li a, .get-involved-button, .date-only, .month-only, .donation-address, .contact-table td span, .contact-table td span a, #tribe-events-content .tribe-events-calendar div[id*=tribe-events-event-] h3.entry-title a {
@@ -1681,7 +1681,7 @@ ul.sub-menu {
 
 .hero-banner {
   width: 100%;
-  height: 500px;
+  height: 475px;
   padding: 3rem 0;
   background: url("../img/flag.jpg") no-repeat;
   background-size: cover;
@@ -1690,7 +1690,7 @@ ul.sub-menu {
   position: absolute; }
 
 .hero-content-holder {
-  padding: 3rem 0;
+  padding: 2rem 0 2rem 0;
   text-align: center;
   color: white; }
 
@@ -2160,6 +2160,19 @@ form label {
 
 #tribe-events-content {
   margin-bottom: 0; }
+  #tribe-events-content dd, #tribe-events-content dt {
+    display: inline;
+    margin: 0; }
+  #tribe-events-content dt {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 1.70rem; }
+  #tribe-events-content dd {
+    font-size: 1.75rem;
+    display: inline-block;
+    margin-bottom: 1rem; }
+    #tribe-events-content dd p, #tribe-events-content dd .message, #tribe-events-content dd .page-content ul li, .page-content ul #tribe-events-content dd li {
+      margin: 0; }
 
 .time-details {
   list-style: none;
@@ -2200,6 +2213,10 @@ address {
 .tribe-events-gmap {
   position: absolute;
   right: 0; }
+
+.location .tribe-events-gmap {
+  position: relative;
+  right: auto; }
 
 .map-block {
   margin-top: 1.75rem; }
@@ -2341,7 +2358,7 @@ address {
   .display-550 {
     display: block; }
 
-  .calendar-content {
+  .tribe-events-month {
     display: none; }
 
   .main-three h3 {

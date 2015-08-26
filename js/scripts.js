@@ -65,7 +65,7 @@ function subMenuManagement(){
 
     //disables links that have sub menus
     $('.sub-menu').parent('li').children('a').click(function(e){
-        e.preventDefault();
+        //e.preventDefault();
     });
 
     if(window.innerWidth > 650){

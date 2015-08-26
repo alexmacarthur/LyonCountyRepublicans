@@ -32,38 +32,42 @@ $website = tribe_get_venue_website_link();
 
 			<div class="venue-block">
 
-			<span class="venue-name"> <?php echo tribe_get_venue() ?> </span>
-
 				<?php do_action( 'tribe_events_single_meta_venue_section_start' ) ?>
 
 				<?php if ( tribe_address_exists() ) : ?>
+					<dt>Location:</dt>
+					<br>
 					<dd class="location">
-						<?php if ( ! empty( $phone ) ): ?>
-							<?php echo $phone ?>
-						<?php endif ?>
 						<address class="tribe-events-address">
 							<?php echo tribe_get_full_address(); ?>
 
 							<?php if ( tribe_show_google_map_link() ) : ?>
-								<?php echo tribe_get_map_link_html(); ?>
+								<br><?php echo tribe_get_map_link_html(); ?>
 							<?php endif; ?>
 						</address>
 					</dd>
+					<br>
+					<dt>Phone:</dt>
+					<?php if ( ! empty( $phone ) ): ?>
+						<dd><?php echo $phone ?></dd>
+						<br>
+					<?php endif ?>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $website ) ): ?>
 					<dt> <?php _e( 'Website:', 'tribe-events-calendar' ) ?> </dt>
 					<dd class="url"> <?php echo $website ?> </dd>
+					<br>
 				<?php endif ?>
 
 				<?php do_action( 'tribe_events_single_meta_venue_section_end' ) ?>
 
-		</div>
+			</div>
 
 		<?php if(tribe_embed_google_map()) : ?>
-			<div class="six columns map-block">
+			<div class="map-block">
 				<div class="tribe-events-meta-group tribe-events-meta-group-gmap">
-					<?php tribe_get_template_part( 'modules/meta/map' ); ?>
+					<?php //tribe_get_template_part( 'modules/meta/map' ); ?>
 				</div>
 			</div>
 		<?php endif; ?>

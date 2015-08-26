@@ -32,82 +32,74 @@ $website = tribe_get_event_website_link();
 		<h3 class="tribe-events-single-section-title"> <?php _e( 'Details', 'tribe-events-calendar' ) ?> </h3>
 	</div>
 	<dl>
-		
-		<ul class="time-details">
 
-			<?php
-			do_action( 'tribe_events_single_meta_details_section_start' );
+		<?php
+		do_action( 'tribe_events_single_meta_details_section_start' );
 
-			// All day (multiday) events
-			if ( tribe_event_is_all_day() && tribe_event_is_multiday() ) :
-				?>
+		// All day (multiday) events
+		if ( tribe_event_is_all_day() && tribe_event_is_multiday() ) :
+			?>
 
-				<li>
-					<span><?php _e( 'Start:', 'tribe-events-calendar' ) ?></span>
-					<p><?php esc_html_e( $start_date ) ?></p>
-				</li>
+				<dt><?php _e( 'Start:', 'tribe-events-calendar' ) ?></dt>
+				<dd><?php esc_html_e( $start_date ) ?></dd>
+				<br>
 
-				<li>
-					<span><?php _e( 'End:', 'tribe-events-calendar' ) ?></span>
-					<p><?php esc_html_e( $end_date ) ?></p>
+				<dt><?php _e( 'End:', 'tribe-events-calendar' ) ?></dt>
+				<dd><?php esc_html_e( $end_date ) ?></dd>
+				<br>
 
-				</li>
+		<?php
+		// All day (single day) events
+		elseif ( tribe_event_is_all_day() ):
+			?>
 
-			<?php
-			// All day (single day) events
-			elseif ( tribe_event_is_all_day() ):
-				?>
 
-				<li>
-					<span><?php _e( 'Date:', 'tribe-events-calendar' ) ?></span>
-					<p><?php esc_html_e( $start_date ) ?></p>
-				</li>
+				<dt><?php _e( 'Date:', 'tribe-events-calendar' ) ?></dt>
+				<dd><?php esc_html_e( $start_date ) ?></dd>
+				<br>
 
-			<?php
-			// Multiday events
-			elseif ( tribe_event_is_multiday() ) :
-				?>
 
-				<li>
-					<span><?php _e( 'Start:', 'tribe-events-calendar' ) ?> </span>
-					<p><?php esc_html_e( $start_datetime ) ?> </p>
-				</li>
+		<?php
+		// Multiday events
+		elseif ( tribe_event_is_multiday() ) :
+			?>
 
-				<li>
-					<span> <?php _e( 'End:', 'tribe-events-calendar' ) ?></span>
-					<p> <?php esc_html_e( $end_datetime ) ?></p>
-				</li>
 
-			<?php
-			// Single day events
-			else :
-				?>
+				<dt><?php _e( 'Start:', 'tribe-events-calendar' ) ?> </dt>
+				<dd><?php esc_html_e( $start_datetime ) ?> </dd>
+				<br>
 
-				<li>
-					<span> <?php _e( 'Date:', 'tribe-events-calendar' ) ?></span>
-					<p><?php esc_html_e( $start_date ) ?></p>
-				</li>
-		
-				<li>
-					<span><?php _e( 'Time:', 'tribe-events-calendar' ) ?></span>
-					<p>
-						<?php if ( $start_time == $end_time ) {
-							esc_html_e( $start_time );
-						} else {
-							esc_html_e( $start_time . $time_range_separator . $end_time );
-						} ?>
-					</p>
-				</li>
+				<dt> <?php _e( 'End:', 'tribe-events-calendar' ) ?></dt>
+				<dd> <?php esc_html_e( $end_datetime ) ?></dd>
+				<br>
 
-			<?php endif ?>
 
-		</ul>
+		<?php
+		// Single day events
+		else :
+			?>
+
+				<dt> <?php _e( 'Date:', 'tribe-events-calendar' ) ?></dt>
+				<dd><?php esc_html_e( $start_date ) ?></dd>
+				<br>
+
+				<dt><?php _e( 'Time:', 'tribe-events-calendar' ) ?></dt>
+				<dd>
+					<?php if ( $start_time == $end_time ) {
+						esc_html_e( $start_time );
+					} else {
+						esc_html_e( $start_time . $time_range_separator . $end_time );
+					} ?>
+				</dd>
+				<br>
+
+		<?php endif ?>
 
 		<!-- Event content -->
 		<?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
-		<div class="tribe-events-single-event-description tribe-events-content entry-content description">
-			<?php the_content(); ?>
-		</div>
+		<dt>Description: </dt>
+		<dd><?php the_content(); ?></dd>
+		<br>
 		<!-- .tribe-events-single-event-description -->
 
 		<?php

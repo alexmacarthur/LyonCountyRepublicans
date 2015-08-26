@@ -16,7 +16,7 @@ if ( empty( $map ) ) {
 
 ?>
 
-<div class="tribe-events-venue-map">
+<div class="col-md-6 tribe-events-venue-map">
 <?php
 // Display the map.
 do_action( 'tribe_events_single_meta_map_section_start' );

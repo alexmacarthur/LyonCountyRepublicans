@@ -1,5 +1,23 @@
 #tribe-events-content{
 	margin-bottom:0;
+	dd,dt{
+		display:inline;
+		margin:0;
+	}
+	dt{
+		text-transform:uppercase;
+	    font-weight: normal;
+    	font-size: 1.70rem;
+	}
+	dd{
+		@extend %average;
+		font-size: 1.75rem;
+		    display: inline-block;
+    margin-bottom: 1rem;
+		p{
+			margin:0;
+		}
+	}
 }
 .time-details{
 	list-style:none;
@@ -46,6 +64,12 @@ address{
 .tribe-events-gmap{
 	position:absolute;
 	right:0;
+}
+.location{
+	.tribe-events-gmap{
+		position:relative;
+		right:auto;
+	}
 }
 .map-block{
 	margin-top: 1.75rem;
