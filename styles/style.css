@@ -2360,20 +2360,21 @@ address {
     .nav-links li {
       line-height: normal;
       height: auto;
-      width: 100%;
-      margin-bottom: 2rem; }
+      width: 100%; }
       .nav-links li:hover {
         border: none; }
       .nav-links li a {
-        font-size: 3rem; }
+        font-size: 2.5rem; }
 
   ul.sub-menu {
     position: relative;
     background: none;
-    border: none; }
+    border: none;
+    padding: 0; }
     ul.sub-menu li {
       line-height: normal;
-      margin-bottom: 1rem; }
+      margin-bottom: 0;
+      padding: 1.5rem 0; }
       ul.sub-menu li a {
         font-size: 2rem;
         text-transform: uppercase; } }

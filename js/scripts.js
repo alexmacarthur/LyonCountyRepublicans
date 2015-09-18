@@ -29,6 +29,8 @@ function initMobileMenu(){
         // if it has this class, it's already open, so close it
         if($('.nav-links-holder').hasClass('open-mobile-menu')){
 
+            //alert('hi');
+            console.log('hi');
             // remove overflow-hidden so full page can be used
             $('html').removeClass('overflow-hidden');
 
@@ -101,7 +103,7 @@ function subMenuManagement(){
         (function(){
             var linksHeight = $('.nav-links').height(),
             windowHeight = $(window).height();
-            $('.nav-links').css('margin-top', (windowHeight-linksHeight)/2);
+            $('.nav-links').css('margin-top', ((windowHeight-linksHeight)/2)-25);
         })();
     
         // append arrow to link items with submenus

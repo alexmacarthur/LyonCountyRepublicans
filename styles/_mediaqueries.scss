@@ -110,12 +110,11 @@
 			line-height:normal;
 			height:auto;
 			width:100%;
-			margin-bottom: 2rem;
 			&:hover{
 				border:none;
 			}
 			a{
-				font-size: 3rem;
+				font-size: 2.5rem;
 			}
 		}
 	}
@@ -123,9 +122,11 @@
 		position:relative;
 		background:none;
 		border:none;
+		padding:0;
 		li{
 			line-height:normal;
-			margin-bottom: 1rem;
+		    margin-bottom: 0;
+		    padding: 1.5rem 0;
 			a{
 				font-size: 2rem;
     			text-transform: uppercase;

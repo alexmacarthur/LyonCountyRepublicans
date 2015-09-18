@@ -22,8 +22,7 @@
         //remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
         //remove_meta_box( 'dashboard_activity', 'dashboard', 'side' );
         //remove_meta_box( 'pageparentdiv', 'page', 'normal'); // removes page attributes
-        
-		// remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
+        		// remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
 		// remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Status Metabox
 		// remove_meta_box( 'commentsdiv','post','normal' ); // Comments Metabox
 		// remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
@@ -31,6 +30,7 @@
 		// remove_meta_box( 'revisionsdiv','post','normal' ); // Revisions Metabox
 		// remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
 		// remove_meta_box( 'trackbacksdiv','post','normal' ); // Trackback Metabox
+
 	}
 	add_action('admin_init', 'remove_dashboard_meta');
 
