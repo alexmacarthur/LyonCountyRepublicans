@@ -46,12 +46,10 @@
 		wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js', array(), '2.1.3', true);
 
 		// register custom JavaScript
-	    wp_register_script( 'custom-script', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1', true);
-	    wp_register_script( 'dropit', get_template_directory_uri() . '/js/dropit.js', array('jquery'), '1', true);
+	    wp_register_script( 'custom-script', get_template_directory_uri() . '/js/scripts.min.js', array('jquery'), '1', true);
 
 	    // Enqueue my custom script, which depends on jQuery, which means jQuery is automatically loaded as well. 
 	    wp_enqueue_script( 'custom-script' );
-	    wp_enqueue_script( 'dropit' );
 
 	    // Enqueue custom styles
 	    wp_enqueue_style('custom-style');

@@ -58,7 +58,6 @@
 	<div class="container main-container">
 
 		<div class="col-md-8 post-roll">
-			<h2 class="section-title">Latest News</h2>
 				<?php while ( have_posts() ) : the_post() ?>		
 
 						<div class="post-box">
@@ -91,27 +90,91 @@
 
 		</div>
 
+		<?php 
+
+			$today = date("Y-m-d",mktime(0,0,0,date("m"),date("d"),date("Y")));
+
+			$args = array(
+		      'post_type' => 'tribe_events',
+		      'meta_key'=>'_EventStartDate',
+		      'orderby'=>'_EventStartDate',
+		      'order'=>'DESC',
+		      	'meta_query' => array(
+				    array(
+				      'key' => '_EventStartDate',
+				      'value' => $today,
+				      'type' => 'DATE',
+				      'compare' => '>=',
+				    )
+				)
+		    );
+		 	$events = get_posts($args);
+		?>
+
 		<div class="col-md-4 sidebar-content">
-			<h2 class="section-title">Upcoming Events</h2>
-			<p class="section-description">There are several upcoming events for you to become involved with the LCR or the conservative cause as a whole.</p>
-			<div class="sidebar-section">
-				<?php get_template_part('includes/snippet', 'upcoming-events'); ?>
-				<a class="more-info" href="<?php echo site_url(); ?>/events">See All Events</a>
-			</div>
+			<?php if(count($events) > 0): ?>
+				<section>
+					<h2 class="section-title">Upcoming Events</h2>
+					<p class="section-description">Check out our upcomoing events for you to become involved with the LCR or the conservative cause as a whole.</p>
+					<div class="sidebar-section">
 
-			<h2 class="section-title">Featured Official</h2>
-			<p class="section-description">The LCR supports several area officials who fight for conservative values and principles.</p>
-			<div class="sidebar-section">
-				<?php get_template_part('includes/snippet', 'featured-official'); ?>
-				<a class="more-info" href="<?php echo site_url(); ?>/candidates">See Who Else We Support</a>
-			</div>
+						<?php //get_template_part('includes/snippet', 'upcoming-events'); ?>
 
-			<h2 class="section-title">Looking to Get Involved?</h2>
-			<p class="description">There are plenty of opportunities to get involved in advancing the goals of the LCR. Find more here!</p>
-			<div class="sidebar-section get-involved-section">
-				<?php /* get_template_part('includes/snippet', 'get-involved');*/ ?>
-				<a class="get-involved-button" href="<?php echo site_url(); ?>/involved">Learn How</a>
-			</div>
+						<?php 
+
+						  if($events){
+						    foreach ($events as $event){
+						      $ID = $event->ID;
+						      $timestamp = strtotime(tribe_get_event_meta( $event->ID, '_EventStartDate', true ));
+						      $theDate = date('d', $timestamp);
+						      $theMonth = date('M', $timestamp);
+						      ?>
+
+						      <div class="row upcoming-event-row">
+						        <div class="col-md-4 date-details">
+						          <div class="date-box-holder">
+						            <div class="date-box">
+						              <span class="date-only"><?php echo $theDate; ?></span>
+						            </div>
+						            <span class="month-only"><?php echo $theMonth; ?></span>
+						          </div>
+						       </div>
+
+						       <div class="col-md-8 event-details">
+
+						          <a href="<?php echo get_permalink($ID); ?>"><h4 class="event-title"><?php echo get_the_title($ID); ?></h4></a>
+						          <span class="event-detail"><?php echo tribe_get_venue($event->ID); ?></span>
+						          <span class="event-detail"><?php echo tribe_get_start_time($event->ID); ?></span>
+						          
+						       </div>
+
+						      </div>
+
+						      <?php
+						    }
+						  }
+						?>
+						<a class="more-info" href="<?php echo site_url(); ?>/events">See All Events</a>
+					</div>
+				</section>
+			<?php endif; ?>
+			
+			<section>
+				<h2 class="section-title">Featured Official</h2>
+				<p class="section-description">The LCR supports several area officials who fight for conservative values and principles.</p>
+				<div class="sidebar-section">
+					<?php get_template_part('includes/snippet', 'featured-official'); ?>
+					<a class="more-info" href="<?php echo site_url(); ?>/candidates">See Who Else We Support</a>
+				</div>
+			</section>
+	
+			<section>
+				<h2 class="section-title">Looking to Get Involved?</h2>
+				<p class="description">There are plenty of opportunities to get involved in advancing the goals of the LCR. Find more here!</p>
+				<div class="sidebar-section get-involved-section">
+					<a class="get-involved-button" href="<?php echo site_url(); ?>/involved">Learn How</a>
+				</div>
+			</section>
 		</div>	
 
 	</div>
