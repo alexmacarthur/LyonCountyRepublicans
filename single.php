@@ -24,6 +24,8 @@
 	 				<?php the_post(); ?>
 	 				<?php the_content(); ?>
 
+	 				<span class="post-date"><i class="fa fa-calendar">&nbsp;&nbsp;</i>Posted on <?php echo get_the_date('F j, Y'); ?></span>
+
 	 			</div>
 
 	 			<div class="col-md-3 sidebar-content">

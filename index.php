@@ -80,7 +80,6 @@
 								<p><?php echo get_the_excerpt(); ?></p>
 								
 								<div class="post-meta">
-									<span class="post-date"><i class="fa fa-calendar">&nbsp;&nbsp;</i>Posted on <?php echo get_the_date('F j, Y'); ?></span>
 									<a href="<?php echo get_permalink(); ?>" class="read-more red-button">Read More</a>
 								</div>
 							</div>

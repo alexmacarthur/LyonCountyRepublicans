@@ -3,15 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<meta name="description" content="The Lyon County Republicans of Minnesota is dedicated to supporting and electing conservative candidates in House District 21A, Senate District 21, and Minnesota’s 7th Congressional District.">
+  	<meta name="keywords" content="conservative, Republican, GOP, Minnesota, free markets">
 	<title><?php bloginfo('title')?></title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico" type="/image/x-icon"/>
 	
 	<?php wp_head()?>
-
-	<!-- Google Analytics -->
-	<script>
-
-	</script>
 
 </head>
 
@@ -30,8 +27,6 @@
 				<?php get_template_part('img/inline', 'logo.svg'); ?>
 			</a>
 		</div>
-
-	<!-- 	<div id="mobile-menu-close"><i class="fa fa-times"></i></div> -->
 
 		<?php 
 			$defaults = array(
