@@ -64,6 +64,12 @@
 }
 
 @media screen and (max-width: 650px){
+	.fa-star {
+		display: none;
+	}
+	.icon-holder {
+	    width: 60%;
+	}
 	.board-members-list{
 		li{
 			width:50%;
@@ -81,8 +87,20 @@
     	margin: 15px auto 0 auto;
     	padding: 5px 0;
 	}
-	.main-three h3{
-		font-size: 2rem;
+	.main-three {
+		&:first-child {
+			.icon-holder {
+				.main-link {
+					svg {
+						max-height: 35px;
+					}
+				}
+			}
+		}
+
+		h3 {
+			font-size: 2rem;
+		}
 	}
 	.icon-holder{
 		height: 85px;
@@ -126,7 +144,8 @@
 		li{
 			line-height:normal;
 		    margin-bottom: 0;
-		    padding: 1.5rem 0;
+	        padding: 1.5rem 0 0;
+
 			a{
 				font-size: 2rem;
     			text-transform: uppercase;

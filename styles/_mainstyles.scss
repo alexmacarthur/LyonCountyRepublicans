@@ -198,7 +198,7 @@ ul.sub-menu{
 	margin-top: 0;
   	position: relative;
  	z-index: 2;
- 	padding: 1.5rem;
+	padding: 3rem 1.5rem 1.5rem 1.5rem;
 	&.page-container{
 		margin-top: 5rem;
 	}
@@ -246,6 +246,13 @@ ul.sub-menu{
 		position:absolute;
 		right:5%;
 		bottom: 5%;
+	}
+}
+.sidebar-content {
+	&>section {
+		h2 {
+			margin-top: 0;
+		}
 	}
 }
 /* featured official */

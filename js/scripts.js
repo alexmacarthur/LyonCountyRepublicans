@@ -29,8 +29,6 @@ function initMobileMenu(){
         // if it has this class, it's already open, so close it
         if($('.nav-links-holder').hasClass('open-mobile-menu')){
 
-            //alert('hi');
-            console.log('hi');
             // remove overflow-hidden so full page can be used
             $('html').removeClass('overflow-hidden');
 
